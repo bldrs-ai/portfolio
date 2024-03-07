@@ -255,7 +255,7 @@ function App({changeTheme, darkTheme}) {
           <iframe
             title='model'
             style={{borderRadius: '10px', border: `1px solid ${theme.palette.primary.main}`, backgroundColor: theme.palette.background.default}}
-            src="https://deploy-preview-1010--bldrs-share.netlify.app/share/v/gh/Swiss-Property-AG/Schneestock-Public/main/ZGRAGGEN.ifc" width="360" height="360" frameborder="0">
+            src="https://bldrs.ai/share/v/gh/Swiss-Property-AG/Schneestock-Public/main/ZGRAGGEN.ifc" width="360" height="360" frameborder="0">
                 Your browser does not support iframes.
           </iframe>
           </Box>

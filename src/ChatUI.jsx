@@ -12,7 +12,7 @@ const Header = ({ closeWindow, theme }) => {
     <Paper
     elevation={0}
     sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px', backgroundColor: theme.palette.background.default}}>
-      <Typography variant="body1">Assistant</Typography>
+      <Typography variant="body1" sx={{marginLeft:'16px'}}>Assistant</Typography>
       <IconButton size="small" onClick={closeWindow}>
         <CloseIcon fontSize="small" />
       </IconButton>

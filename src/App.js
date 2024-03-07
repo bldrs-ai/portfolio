@@ -1,7 +1,7 @@
-import logo from './logo.svg';
 import {Box} from '@mui/material'
 import './App.css';
 import Map from './MapBox'
+import AppBar from './AppBar/AppBar'
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
           zIndex:-100}}
       >
         <Map />
+        <AppBar/>
       </Box>
   );
 }

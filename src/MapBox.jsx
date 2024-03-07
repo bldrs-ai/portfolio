@@ -48,6 +48,40 @@ const Map = forwardRef((props, ref) => {
           />
         </button>
       </Marker>
+      <Marker latitude={46.6683} longitude={8.5702}>
+        <button onClick={() => {
+          if(activeMarker === 'marker1'){
+            onMarkerClick('')
+          }else{
+            onMarkerClick('marker2')
+          }
+        }} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+          <div
+            style={{
+              ...markerStyle,
+              backgroundColor: activeMarker === 'marker2' ? theme.palette.secondary.main : theme.palette.primary.main,
+              border: activeMarker === 'marker1' ? `2px solid ${theme.palette.primary.main}` : `2px solid ${theme.palette.secondary.main}`,
+            }}
+          />
+        </button>
+      </Marker>
+      <Marker latitude={46.6333} longitude={8.6000}>
+        <button onClick={() => {
+          if(activeMarker === 'marker1'){
+            onMarkerClick('')
+          }else{
+            onMarkerClick('marker2')
+          }
+        }} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+          <div
+            style={{
+              ...markerStyle,
+              backgroundColor: activeMarker === 'marker2' ? theme.palette.secondary.main : theme.palette.primary.main,
+              border: activeMarker === 'marker1' ? `2px solid ${theme.palette.primary.main}` : `2px solid ${theme.palette.secondary.main}`,
+            }}
+          />
+        </button>
+      </Marker>
       {/* You can add more markers here */}
     </MapGL>
   );

@@ -42,7 +42,7 @@ function SwipeableEdgeDrawer(props) {
 
   // This is used only for the example
   const container = window !== undefined ? () => window().document.body : undefined;
-  const tabList = ['Savings', 'Energy Frame', '...', '...']
+  const tabList = ['Portfolio',]
   return (
     <Root>
       <CssBaseline />

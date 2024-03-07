@@ -3,6 +3,7 @@ import { grey } from '@mui/material/colors';
 import {colors} from './colors'
 
 
+const selectedColor = colors[1]
 export const themeComponent = {
   spacing: 8,
   shape: {
@@ -158,17 +159,17 @@ export const lightTheme = createTheme({
       main: 'white',
     },
     primary: {
-      main: colors[1].primary,
+      main: selectedColor.primary,
     },
     secondary: {
-      main: colors[1].secondary,
+      main: selectedColor.secondary,
     },
     background: {
-      paper: colors[1].paper,
-      default: colors[1].default,
+      paper: selectedColor.paper,
+      default: selectedColor.default,
     },
     selected: {
-      main: colors[1].secondary, // Example color for selected state
+      main: selectedColor.secondary, // Example color for selected state
     },
   },
   ...themeComponent,
@@ -180,17 +181,17 @@ export const darkTheme = createTheme({
       main: 'white',
     },
     primary: {
-      main: colors[1].primary,
+      main: selectedColor.primary,
     },
     secondary: {
-      main: colors[1].secondary,
+      main: selectedColor.secondary,
     },
     background: {
-      paper: colors[1].paper,
-      default: colors[1].default,
+      paper: selectedColor.paper,
+      default: selectedColor.default,
     },
     selected: {
-      main: colors[1].secondary, // Example color for selected state
+      main: selectedColor.secondary, // Example color for selected state
     },
   },
   ...themeComponent,

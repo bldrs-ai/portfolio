@@ -11,10 +11,9 @@ import RightSide from './RightSide'
 
 
 const searchElements = [
-  { title: 'address 1' },
-  { title: 'address 2' },
-  { title: 'address 3' },
-  { title: 'address 4' },
+  { title: 'TurmfalkeSuites, Andermatt' },
+  { title: 'Eisvogel, Andermatt' },
+  { title: 'Wollishofen, Zurich' },
 ]
 
 

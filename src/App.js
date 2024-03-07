@@ -87,7 +87,7 @@ function App({changeTheme, darkTheme}) {
     <AppBar darkTheme={darkTheme} changeTheme={changeTheme} onGoToLocation={triggerGoToLocation}/>
     {!isMobile &&
       <Drawer
-        topPanelName={'Info'}
+        topPanelName={'Overview'}
         topPanel={<PropertiesList/>}
         topPanelButton={<PropertiesButtons/>}
         side={'right'}

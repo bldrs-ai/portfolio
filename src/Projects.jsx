@@ -24,10 +24,10 @@ import useStore from './Store';
         res.map((project, index) => (
           <Chip
             key={index}
-            label={`${project.iri}`}
+            label={`${project.name}`}
             variant='contained'
             onClick={async () => {
-              onGoToLocation(project.lat, project.lng, 14)
+              // onGoToLocation(project.lat, project.lng, 14)
               onClose()
             }}
             color='primary'

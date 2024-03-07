@@ -267,7 +267,7 @@ function App({changeTheme, darkTheme}) {
         alignItems={'center'}
         sx={{
           position:'absolute',
-          top:340 ,
+          top:300 ,
           width:'100%'
         }}
 

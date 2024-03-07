@@ -61,7 +61,7 @@ const InputFooter = ({ input, setInput, handleSend, theme }) => {
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <IconButton onClick={handleSend} edge="end" size="small" disabled={!input.trim()}>
+              <IconButton onClick={handleSend} edge="end" size="small" disabled={!input.trim()} sx={{border:'none'}}>
                 <ArrowForwardOutlinedIcon />
               </IconButton>
             </InputAdornment>

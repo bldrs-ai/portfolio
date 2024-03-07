@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Chip from '@mui/material/Chip'
 import Stack from '@mui/material/Stack'
+import useStore from './Store';
 
 
  export default function Projects({onGoToLocation, onClose}){
-  // const {res, setProject} = useStore()
-  const res = [{iri:'Schneestock'}, {iri:'Eisvogel'}]
+  const {res} = useStore()
 
   return(
     <Stack

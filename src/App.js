@@ -133,7 +133,7 @@ function App({changeTheme, darkTheme}) {
             >
               {logo[portfolioNumber]}
                 <Typography variant={'body1'} color='primary'>
-                {portfolio.name} Portfolio
+                {portfolio.name}
                 </Typography>
               </Stack>
             }

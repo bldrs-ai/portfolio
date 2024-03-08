@@ -132,7 +132,6 @@ export const themeComponent = {
     MuiAutocomplete: {
       styleOverrides: {
         inputRoot: ({ theme }) => ({
-          backgroundColor: theme.palette.background.default ,
           '& .MuiOutlinedInput-notchedOutline': {
             borderColor: theme.palette.primary.main,
           },

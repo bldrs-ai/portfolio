@@ -22,15 +22,17 @@ import CircularProgress from '@mui/material/CircularProgress';
 import ViewInArIcon from '@mui/icons-material/ViewInAr';
 import TryOutlinedIcon from '@mui/icons-material/TryOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-import Logo from './Logos/LogoSP'
+import LogoSP from './Logos/LogoSP'
+import LogoCP from './Logos/LogoPortfolio'
 
 
+const logo = [<LogoSP/>, <LogoCP/>]
 
 
 const AboutShare = () => {
   return(
     <Stack sx={{height: '220px', overflow: 'scroll', paddingTop: '20px'}}>
-    <Typography variant='body1' color='default'>
+    <Typography variant='body1' color='primary'>
     Welcome to a collection of Swiss property projects, backed by bldrs.ai.
     Feel free to explore by selecting a project on the map or browsing through the 'Projects' section.
      Each one includes a 3D model—just click on the cube icon to view it. And if you have any questions,
@@ -58,7 +60,9 @@ function App({changeTheme, darkTheme}) {
   const {
     rightDrawer,
     toggleRightDrawer,
-    showViewer
+    showViewer,
+    portfolio,
+    portfolioNumber
   } = useStore();
 
   const [showChatUI, setShowChatUI] = useState(false)
@@ -127,9 +131,9 @@ function App({changeTheme, darkTheme}) {
             direction='row'
             spacing={1}
             >
-              <Logo/>
+              {logo[portfolioNumber]}
                 <Typography variant={'body1'} color='primary'>
-                Swiss Property Portfolio
+                {portfolio.name} Portfolio
                 </Typography>
               </Stack>
             }

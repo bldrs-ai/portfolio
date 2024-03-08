@@ -42,7 +42,7 @@ export default function PrimaryAppBar({ darkTheme, changeTheme, onGoToLocation }
         </Stack>
       }
       <Box sx={{ flexGrow: 1 }} />
-      <RightSide/>
+      <RightSide onGoToLocation={onGoToLocation}/>
       </Toolbar>
     </AppBar>
   );

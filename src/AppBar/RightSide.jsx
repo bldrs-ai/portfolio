@@ -9,7 +9,7 @@ import Portfolios from '../Portfolios'
 
 
 
-const RightSide = () => {
+const RightSide = ({onGoToLocation}) => {
   return(
     <Stack
     direction="row"
@@ -38,7 +38,7 @@ const RightSide = () => {
           </Typography>
         }
         dialogContent={
-          <Portfolios />
+          <Portfolios onGoToLocation={onGoToLocation}/>
         }
       />
     </Stack>

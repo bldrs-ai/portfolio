@@ -142,7 +142,7 @@ export const themeComponent = {
         input: ({ theme }) => ({
           color: theme.palette.primary.main,
           '&::placeholder': {
-            color:  theme.palette.primary.main,
+            // color:  theme.palette.background.primary,
           },
         }),
       },

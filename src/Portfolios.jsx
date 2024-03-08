@@ -4,8 +4,8 @@ import Stack from '@mui/material/Stack'
 import useStore from './Store';
 
 
-export default function Portfolios({onClose}){
-const {portfolios, portfolio, setPortfolio, setPortfolioNumber} = useStore();
+export default function Portfolios({onClose, onGoToLocation}){
+const {portfolios, portfolio, setPortfolio, setPortfolioNumber, portfolioNumber} = useStore();
 
 
 return(
@@ -31,6 +31,7 @@ return(
             onClose()
             setPortfolio(portfolios[index])
             setPortfolioNumber(index)
+            onGoToLocation(portfolios[index].coordinates.lat, portfolios[index].coordinates.lng, 14)
           }}
           color='primary'
         />

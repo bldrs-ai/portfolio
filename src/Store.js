@@ -32,9 +32,9 @@ const useStore = create((set) => ({
       name:'Swiss Property',
       colorTheme:0,
       map:'mapbox://styles/aechack2024/cltfvi20g00r401qn6l1shoag',
-      initialViewState: {
-        latitude:  46.6333,
-        longitude:  8.6000,
+      coordinates: {
+        lat:  46.6333,
+        lng:  8.6000,
         zoom: 6
       },
       projects:[
@@ -116,9 +116,9 @@ const useStore = create((set) => ({
       name:'Copenhagen AEC',
       colorTheme:1,
       map:'mapbox://styles/aechack2024/cltaoevq300uu01pje4rwdi24',
-      initialViewState: {
-        latitude: 55.6811,
-        longitude: 12.5981,
+      coordinates: {
+        lat: 55.6811,
+        lng: 12.5981,
         zoom: 7
       },
       projects:[

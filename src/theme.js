@@ -133,7 +133,7 @@ export const themeComponent = {
       styleOverrides: {
         inputRoot: ({ theme }) => ({
           '& .MuiOutlinedInput-notchedOutline': {
-            borderColor: theme.palette.primary.main,
+            borderColor: theme.palette.background.main,
           },
           '&:hover .MuiOutlinedInput-notchedOutline': {
             borderColor: theme.palette.primary.main,

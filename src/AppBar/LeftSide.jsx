@@ -7,12 +7,13 @@ import Stack from '@mui/material/Stack'
 import Dialog from '../Dialog'
 import Projects from '../Projects'
 import useStore from '../Store';
+import {ConstructionOutlined} from '@mui/icons-material';
 
 
 const logo = [<LogoSP/>, <LogoCP/>]
 
-const LeftSide = (onGoToLocation) => {
-  const {portfolioNumber} = useStore();
+const LeftSide = ({onGoToLocation}) => {
+  const {portfolios, portfolioNumber} = useStore();
   return(
     <Stack
     direction='row'
@@ -26,8 +27,8 @@ const LeftSide = (onGoToLocation) => {
         aria-label="account of current user"
         aria-haspopup="true"
         color="inherit"
-        onClick={onGoToLocation}
         sx={{border:'none'}}
+        onClick={()=>onGoToLocation(portfolios[portfolioNumber].coordinates.lat, portfolios[portfolioNumber].coordinates.lng, 14)}
       >
         {logo[portfolioNumber]}
       </IconButton>

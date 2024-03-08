@@ -9,9 +9,10 @@ const Map = forwardRef((props, ref) => {
   const theme = useTheme()
   const {portfolio, portfolios, portfolioNumber} = useStore();
 
-  const goToLocation = (lat, lng, zoom = 10) => {
+  const goToLocation = (lat, lng, zoom = 7) => {
     const map = mapRef.current.getMap();
     map.flyTo({ center: [lng, lat], zoom, essential: true });
+    console.log('zoom', zoom)
   };
 
   const onMarkerClick = (markerId) => {

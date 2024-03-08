@@ -62,7 +62,8 @@ function App({changeTheme, darkTheme}) {
     toggleRightDrawer,
     showViewer,
     portfolio,
-    portfolioNumber
+    portfolioNumber,
+    project
   } = useStore();
 
   const [showChatUI, setShowChatUI] = useState(false)
@@ -118,7 +119,7 @@ function App({changeTheme, darkTheme}) {
         direction="column"
         justifyContent="space-between"
         alignItems="center"
-        sx={{position:'fixed',  left:'22px', top: '84px', height:'88%', zIndex:100}}
+        sx={{position:'fixed',  left:'14px', top: '84px', height:'88%', zIndex:100}}
       >
           <Dialog
             iconButton={true}
@@ -217,26 +218,6 @@ function App({changeTheme, darkTheme}) {
           <ChatUI closeWindow={()=>setShowChatUI(false)}/>
         </Stack>
       }
-              {
-        showViewer &&
-        <Stack
-        id='viewer'
-        spacing={1}
-        justifyContent={'center'}
-        alignItems={'center'}
-        sx={{
-          position:'absolute',
-          top:120,
-          left:10,
-          width:360,
-          height:360,
-          color:'white',
-          backgroundColor:'#0D0D0D',
-          borderRadius:'20px'}}>
-            <CircularProgress color='primary' />
-            <Typography variant='overline' >Loading a model</Typography>
-          </Stack>
-        }
       {
         viewerLoading &&
         <Box
@@ -258,12 +239,22 @@ function App({changeTheme, darkTheme}) {
         >
           <Close size='inherit'  />
         </IconButton>
+        {project===0 &&
           <iframe
             title={'bldrs'}
             style={{borderRadius: '10px', border: `1px solid ${theme.palette.primary.main}`, backgroundColor: theme.palette.background.default}}
             src="https://deploy-preview-1010--bldrs-share.netlify.app/share/v/gh/Swiss-Property-AG/Schneestock-Public/main/ZGRAGGEN.ifc" width="360" height="360" frameborder="0">
                 Your browser does not support iframes.
           </iframe>
+        }
+        {project===1 &&
+          <iframe
+              title={'bldrs'}
+              style={{borderRadius: '10px', border: `1px solid ${theme.palette.primary.main}`, backgroundColor: theme.palette.background.default}}
+              src="https://bldrs.ai/share/v/gh/Swiss-Property-AG/Eisvogel-Public/main/EISVOGEL.ifc#c:-80.078,18.319,-21.977,5.54,10.682,-21.251" width="360" height="360" frameborder="0">
+                  Your browser does not support iframes.
+          </iframe>
+        }
           </Box>
         }
     </>

@@ -33,7 +33,7 @@ const AboutShare = () => {
   return(
     <Stack sx={{height: '220px', overflow: 'scroll', paddingTop: '20px'}}>
     <Typography variant='body1' color='primary'>
-    Welcome to a collection of Swiss property projects, backed by bldrs.ai.
+    Welcome to a collection of Swiss property projects, backed by Bldrs.ai.
     Feel free to explore by selecting a project on the map or browsing through the 'Projects' section.
      Each one includes a 3D model—just click on the cube icon to view it. And if you have any questions,
       our assistant is here to chat with you.

@@ -151,9 +151,8 @@ export const themeComponent = {
     MuiInputBase: {
       styleOverrides: {
         root: ({ theme }) => ({
-          backgroundColor: theme.palette.background.default ,
           '& .MuiOutlinedInput-notchedOutline': {
-            borderColor: theme.palette.primary.main,
+            borderColor: theme.palette.background.paper,
           },
           '&:hover .MuiOutlinedInput-notchedOutline': {
             borderColor: theme.palette.primary.main,

@@ -11,8 +11,8 @@ const Header = ({ closeWindow, theme }) => {
   return (
     <Paper
     elevation={0}
-    sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px', backgroundColor: theme.palette.background.default}}>
-      <Typography variant="body1" color='primary' sx={{marginLeft:'20px'}}>Assistant</Typography>
+    sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '24px', backgroundColor: theme.palette.background.default}}>
+      <Typography variant="body1" color='primary' sx={{marginLeft:'1å0px'}}>Assistant</Typography>
       <IconButton size="small" onClick={closeWindow}>
         <CloseIcon fontSize="small" />
       </IconButton>

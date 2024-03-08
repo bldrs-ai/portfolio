@@ -7,8 +7,7 @@ const Map = forwardRef((props, ref) => {
   const mapRef = useRef();
   const [activeMarker, setActiveMarker] = useState(null);
   const theme = useTheme()
-  const {portfolio} = useStore();
-  console.log('portfolio.map',portfolio.map)
+  const {portfolio, portfolios, portfolioNumber} = useStore();
 
   const goToLocation = (lat, lng, zoom = 10) => {
     const map = mapRef.current.getMap();
@@ -31,11 +30,31 @@ const Map = forwardRef((props, ref) => {
     <MapGL
       ref={mapRef}
       initialViewState={{ latitude: 47.3769, longitude: 8.5417, zoom: 3 }}
-      // initialViewState={portfolio.initialViewState}
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
       mapStyle={portfolio.map}
     >
-      <Marker latitude={47.3769} longitude={8.5417}>
+      {
+        portfolios[portfolioNumber].projects.map((project, index) => (
+        <Marker latitude={project.lat} longitude={project.lng}>
+          <button onClick={() => {
+            if(activeMarker === index){
+              onMarkerClick(null)
+            }else{
+              onMarkerClick(index)
+            }
+          }} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+            <div
+              style={{
+                ...markerStyle,
+                backgroundColor: activeMarker === index ? theme.palette.secondary.main : theme.palette.primary.main,
+                border: activeMarker === index ? `2px solid ${theme.palette.primary.main}` : `2px solid ${theme.palette.secondary.main}`,
+              }}
+            />
+          </button>
+        </Marker>
+        ))
+      }
+      {/* <Marker latitude={47.3769} longitude={8.5417}>
         <button onClick={() => {
           if(activeMarker === 'marker1'){
             onMarkerClick('')
@@ -51,7 +70,7 @@ const Map = forwardRef((props, ref) => {
             }}
           />
         </button>
-      </Marker>
+      </Marker> */}
       {/* You can add more markers here */}
     </MapGL>
   );

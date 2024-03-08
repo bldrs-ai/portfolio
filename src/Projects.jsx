@@ -1,11 +1,12 @@
 import * as React from 'react';
 import Chip from '@mui/material/Chip'
 import Stack from '@mui/material/Stack'
+import useStore from './Store'
 
 
  export default function Projects({onGoToLocation, onClose}){
-  // const {res, setProject} = useStore()
-  const res = [{iri:'Schneestock'}, {iri:'Eisvogel'}]
+  const {portfolios, portfolioNumber, project, setProject} = useStore()
+  console.log('project', project)
 
   return(
     <Stack
@@ -21,13 +22,14 @@ import Stack from '@mui/material/Stack'
       sx={{ overflow: 'scroll', width: '200px' }}
     >
       {
-        res.map((project, index) => (
+        portfolios[portfolioNumber].projects.map((project, index) => (
           <Chip
             key={`project ${index}`}
-            label={`${project.iri}`}
+            label={`${project.name}`}
             variant='contained'
             onClick={async () => {
-              onGoToLocation(project.lat, project.lng, 14)
+              // onGoToLocation(project.lat, project.lng, 14)
+              setProject(index)
               onClose()
             }}
             color='primary'

@@ -1,11 +1,14 @@
 import React, { useRef, useImperativeHandle, forwardRef, useState } from 'react';
 import MapGL, { Marker } from 'react-map-gl';
 import { useTheme } from '@mui/material/styles';
+import useStore from './Store';
 
 const Map = forwardRef((props, ref) => {
   const mapRef = useRef();
   const [activeMarker, setActiveMarker] = useState(null);
   const theme = useTheme()
+  const {portfolio} = useStore();
+  console.log('portfolio.map',portfolio.map)
 
   const goToLocation = (lat, lng, zoom = 10) => {
     const map = mapRef.current.getMap();
@@ -27,9 +30,10 @@ const Map = forwardRef((props, ref) => {
   return (
     <MapGL
       ref={mapRef}
-      initialViewState={{ latitude: 47.3769, longitude: 8.5417, zoom: 6 }}
+      initialViewState={{ latitude: 47.3769, longitude: 8.5417, zoom: 3 }}
+      // initialViewState={portfolio.initialViewState}
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-      mapStyle="mapbox://styles/aechack2024/cltfvi20g00r401qn6l1shoag"
+      mapStyle={portfolio.map}
     >
       <Marker latitude={47.3769} longitude={8.5417}>
         <button onClick={() => {
@@ -54,3 +58,5 @@ const Map = forwardRef((props, ref) => {
 });
 
 export default Map;
+
+

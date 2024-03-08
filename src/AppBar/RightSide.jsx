@@ -1,10 +1,11 @@
 import * as React from 'react';
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography';
-import LogoB from '../LogoB'
+import LogoB from '../Logos/LogoB'
 import Stack from '@mui/material/Stack'
 import Dialog from '../Dialog'
 import Portfolios from '../Portfolios'
+
 
 
 

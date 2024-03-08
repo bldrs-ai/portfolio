@@ -10,10 +10,7 @@ import FormControl from '@mui/material/FormControl';
 import ListSubheader from '@mui/material/ListSubheader';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-import useStore from './Store';
 import { useTheme } from '@mui/material/styles';
-import ListItem from '@mui/material/ListItem';
-import Accordion from './Accordian';
 const drawerWidth = 380;
 
 
@@ -29,14 +26,13 @@ export default function SideDrawer2({
   }) {
   const [isFirstPanel, setIsFirstPanel] = React.useState(true)
   const [isSecondPanel, setIsSecondPanel] = React.useState(true)
-
   const [firstPanel, setFirstPanel] = React.useState('first')
-  const {project} = useStore()
   const theme = useTheme()
 
   useEffect(()=>{
     setIsFirstPanel(showFirstPanel)
     setIsSecondPanel(showSecondPanel)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
 

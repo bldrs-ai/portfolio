@@ -1,10 +1,12 @@
 import * as React from 'react';
 import Chip from '@mui/material/Chip'
 import Stack from '@mui/material/Stack'
+import useStore from './Store';
 
 
 export default function Portfolios({onClose}){
-const res = [{iri:'SP'}, {iri:'Denmark Proptech'}]
+const {portfolios, portfolio, setPortfolio, setPortfolioNumber} = useStore();
+
 
 return(
   <Stack
@@ -20,13 +22,15 @@ return(
     sx={{ overflow: 'scroll', width: '200px' }}
   >
     {
-      res.map((project, index) => (
+      portfolios.map((element, index) => (
         <Chip
-          key={index} // Use a unique identifier for `key` if available
-          label={`${project.iri}`} // Convert `project.iri` to a string, if it's not already
-          variant='contained'
+          key={`portfolio ${index}`}
+          label={element.name}
+          variant={element.name === portfolio.name ? 'contained':'outlined' }
           onClick={async () => {
             onClose()
+            setPortfolio(portfolios[index])
+            setPortfolioNumber(index)
           }}
           color='primary'
         />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   TextField, Paper, List, ListItem, ListItemText,
-  useTheme, InputAdornment, IconButton, Typography, Box
+  useTheme, InputAdornment, IconButton, Typography
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
@@ -12,7 +12,7 @@ const Header = ({ closeWindow, theme }) => {
     <Paper
     elevation={0}
     sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px', backgroundColor: theme.palette.background.default}}>
-      <Typography variant="body1">Assistant</Typography>
+      <Typography variant="body1" color='primary' sx={{marginLeft:'20px'}}>Assistant</Typography>
       <IconButton size="small" onClick={closeWindow}>
         <CloseIcon fontSize="small" />
       </IconButton>
@@ -25,7 +25,7 @@ const MessageList = ({ messages, theme }) => {
   return (
     <List sx={{ flex: 1, overflow: 'auto', backgroundColor: theme.palette.background.default }}>
       {messages.map((msg, idx) => (
-        <ListItem key={idx} sx={{ justifyContent: msg.type === 'sent' ? 'flex-end' : 'flex-start' }}>
+        <ListItem key={`chat ${idx}`} sx={{ justifyContent: msg.type === 'sent' ? 'flex-end' : 'flex-start' }}>
           <ListItemText
             primary={msg.text}
             sx={{
@@ -61,8 +61,8 @@ const InputFooter = ({ input, setInput, handleSend, theme }) => {
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <IconButton onClick={handleSend} edge="end" size="small" disabled={!input.trim()}>
-                <ArrowForwardOutlinedIcon />
+              <IconButton onClick={handleSend} edge="end" size="small" disabled={!input.trim()} sx={{border:'none'}}>
+                <ArrowForwardOutlinedIcon color='primary'/>
               </IconButton>
             </InputAdornment>
           ),

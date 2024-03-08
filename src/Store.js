@@ -1,32 +1,24 @@
 import { create } from 'zustand'
-const firstNote =
-{
-  title:'Welcome to Notes',
-  date: '17.09.2023',
-  content:`We believe in using the right tool for the job. As an integration enviromemnt, we
-  offer several integrations to enable collaboration workflows around 3D content.
-  Notion, Linear, GitHub or X seem to be solid choices for note-based worlflows. While GitHub is foundational to our ecosystem and linked to Share by default,
-  other platforms might better suit your needs. Just connect to your preferred solution. Visit our Wiki to learn more about integrations`,
-  type:'image',
-  src:'https://user-images.githubusercontent.com/3433606/271344003-c505b72f-0d39-4ae1-99a4-c276daeb0733.png'
-}
-const secondNote =
-{
-  title:'Example Note',
-  date: '17.09.2023',
-  content:`Engine cross sectional plans`,
-  type:'image',
-  src:'https://i.pinimg.com/564x/ac/6d/50/ac6d50ccbde053337dae0390bd44a193.jpg'
-}
+
 
 const useStore = create((set) => ({
   borderRadius: 16,
   themeScheme: 0,
   showComponents: false,
   showComments: false,
-  notes:[firstNote,secondNote],
   circles:[],
-  res: [], // Initialize 'res' with an empty array
+  res:[
+    {
+        "iri": "Project 1",
+        'lat': 55.672278,
+        'lng': 12.5785,
+    },
+    {
+        "iri": "Project 2",
+        'lat': 55.6273872,
+        'lng': 12.579409,
+    },
+],
   rightDrawer:false,
   leftDrawer: false,
   isNotesOpen: true,
@@ -35,6 +27,38 @@ const useStore = create((set) => ({
   isTimelineOpen: true,
   showViewer: false,
   project: [],
+  portfolio:   {
+    name:'Swiss Property',
+    colorTheme:0,
+    map:'mapbox://styles/aechack2024/cltfvi20g00r401qn6l1shoag',
+    initialViewState: {
+      latitude: 47.3769,
+      longitude: 8.5417,
+      zoom: 6
+    }},
+  portfolioNumber: 0,
+  portfolios:[
+    {
+      name:'Swiss Property',
+      colorTheme:0,
+      map:'mapbox://styles/aechack2024/cltfvi20g00r401qn6l1shoag',
+      initialViewState: {
+        latitude: 47.3769,
+        longitude: 8.5417,
+        zoom: 6
+      }
+    },
+    {
+      name:'Copenhagen AEC',
+      colorTheme:1,
+      map:'mapbox://styles/aechack2024/cltaoevq300uu01pje4rwdi24',
+      initialViewState: {
+        latitude: 55.6811,
+        longitude: 12.5981,
+        zoom: 7
+      }
+    }
+  ],
   setNotes: (value) => set(() => ({ notes: value})),
   setCircles: (value) => set(() => ({ circles: value})),
   setBorderRadius: (value) => set(() => ({ borderRadius: value})),
@@ -45,6 +69,8 @@ const useStore = create((set) => ({
   toggleLeftDrawer: () => set((state) => ({ leftDrawer: !state.leftDrawer})),
   setRes: (value) => set(() => ({ res: value })), // Function to update 'res'
   setProject: (value) => set(() => ({ project: value })), // Function to update 'res'
+  setPortfolio: (value) => set(() => ({ portfolio: value })), // Function to update 'res'
+  setPortfolioNumber: (value) => set(() => ({ portfolioNumber : value })), // Function to update 'res'
   toggleShowViewer: () => set((state) => ({ showViewer: !state.showViewer })),
 }));
 

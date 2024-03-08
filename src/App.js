@@ -22,7 +22,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import ViewInArIcon from '@mui/icons-material/ViewInAr';
 import TryOutlinedIcon from '@mui/icons-material/TryOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-import Logo from './LogoSP'
+import Logo from './Logos/LogoSP'
 
 
 
@@ -66,6 +66,8 @@ function App({changeTheme, darkTheme}) {
   const isMobile = useMediaQuery('(max-width:600px)');
   const theme = useTheme();
   const mapComponentRef = useRef();
+
+
 
 
   const PropertiesButtons = () => {
@@ -253,6 +255,7 @@ function App({changeTheme, darkTheme}) {
           <Close size='inherit'  />
         </IconButton>
           <iframe
+            title={'bldrs'}
             style={{borderRadius: '10px', border: `1px solid ${theme.palette.primary.main}`, backgroundColor: theme.palette.background.default}}
             src="https://deploy-preview-1010--bldrs-share.netlify.app/share/v/gh/Swiss-Property-AG/Schneestock-Public/main/ZGRAGGEN.ifc" width="360" height="360" frameborder="0">
                 Your browser does not support iframes.

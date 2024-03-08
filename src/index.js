@@ -8,25 +8,20 @@ import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
 import {ThemeProvider } from '@mui/material/styles';
-import useStore from './Store';
 import { lightTheme, darkTheme} from './theme'
+import useStore from './Store';
 
 
 
 
 const Sample = () =>{
 const [dark, setDark] = useState(false)
-const { borderRadius, themeScheme,  } = useStore((state) => ({
-  borderRadius: state.borderRadius,
-  themeScheme: state.themeScheme,
-  setRes: state.setRes
-}));
-
-
+const { portfolio} = useStore();
+console.log('colorTheme', portfolio.colorTheme)
 
   return(
     <React.StrictMode>
-        <ThemeProvider theme={dark ? darkTheme : lightTheme}>
+        <ThemeProvider theme={dark ? darkTheme(portfolio.colorTheme) : lightTheme(portfolio.colorTheme)}>
           <App changeTheme={() => setDark(!dark)} darkTheme={dark}/>
         </ThemeProvider>
       </React.StrictMode>

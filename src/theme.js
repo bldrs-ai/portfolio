@@ -1,5 +1,4 @@
 import { createTheme } from '@mui/material';
-import { grey } from '@mui/material/colors';
 import {colors} from './colors'
 
 
@@ -144,53 +143,74 @@ export const themeComponent = {
         input: ({ theme }) => ({
           color: theme.palette.primary.main,
           '&::placeholder': {
-            color:  theme.palette.primary.main, // Example: change the placeholder text color to red
+            color:  theme.palette.primary.main,
+          },
+        }),
+      },
+    },
+    MuiInputBase: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          backgroundColor: theme.palette.background.default ,
+          '& .MuiOutlinedInput-notchedOutline': {
+            borderColor: theme.palette.primary.main,
+          },
+          '&:hover .MuiOutlinedInput-notchedOutline': {
+            borderColor: theme.palette.primary.main,
+          },
+        }),
+        input: ({ theme }) => ({
+          color: theme.palette.primary.main,
+          '&::placeholder': {
+            color:  theme.palette.primary.main,
           },
         }),
       },
     },
   },
 }
-export const lightTheme = createTheme({
+
+export const lightTheme = (colorTheme=1) => createTheme({
   palette: {
     mode: 'light',
     default: {
       main: 'white',
     },
     primary: {
-      main: colors[1].primary,
+      main: colors[colorTheme].primary,
     },
     secondary: {
-      main: colors[1].secondary,
+      main: colors[colorTheme].secondary,
     },
     background: {
-      paper: colors[1].paper,
-      default: colors[1].default,
+      paper: colors[colorTheme].paper,
+      default: colors[colorTheme].default,
     },
     selected: {
-      main: colors[1].secondary, // Example color for selected state
+      main: colors[colorTheme].secondary, // Example color for selected state
     },
   },
   ...themeComponent,
 })
-export const darkTheme = createTheme({
+
+export const darkTheme = (colorTheme=1) => createTheme({
   palette: {
     mode: 'dark',
     default: {
       main: 'white',
     },
     primary: {
-      main: colors[1].primary,
+      main: colors[colorTheme].primary,
     },
     secondary: {
-      main: colors[1].secondary,
+      main: colors[colorTheme].secondary,
     },
     background: {
-      paper: colors[1].paper,
-      default: colors[1].default,
+      paper: colors[colorTheme].paper,
+      default: colors[colorTheme].default,
     },
     selected: {
-      main: colors[1].secondary, // Example color for selected state
+      main: colors[colorTheme].secondary, // Example color for selected state
     },
   },
   ...themeComponent,

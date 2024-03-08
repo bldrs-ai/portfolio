@@ -23,7 +23,7 @@ import Stack from '@mui/material/Stack'
       {
         res.map((project, index) => (
           <Chip
-            key={index}
+            key={`project ${index}`}
             label={`${project.iri}`}
             variant='contained'
             onClick={async () => {

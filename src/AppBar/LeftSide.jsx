@@ -1,14 +1,18 @@
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Logo from '../LogoSP'
+import LogoSP from '../Logos/LogoSP'
+import LogoCP from '../Logos/LogoPortfolio'
 import Stack from '@mui/material/Stack'
 import Dialog from '../Dialog'
 import Projects from '../Projects'
+import useStore from '../Store';
 
 
+const logo = [<LogoSP/>, <LogoCP/>]
 
 const LeftSide = (onGoToLocation) => {
+  const {portfolioNumber} = useStore();
   return(
     <Stack
     direction='row'
@@ -25,7 +29,7 @@ const LeftSide = (onGoToLocation) => {
         onClick={onGoToLocation}
         sx={{border:'none'}}
       >
-        <Logo scaled={true}/>
+        {logo[portfolioNumber]}
       </IconButton>
       <Dialog
         actionTitle={'OK'}

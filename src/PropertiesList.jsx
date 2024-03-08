@@ -12,7 +12,7 @@ export default function PropertiesList() {
       >
         {['Info 1','Info 2','Info 3'].map((text, index) => (
             <ListItem  key={`accordian ${index}`}>
-              <Accordion key={text} title={text} content={'Properties table'}/>
+              <Accordion key={`chat ${text}`} title={text} content={'Properties table'}/>
             </ListItem>
         ))}
       </List>

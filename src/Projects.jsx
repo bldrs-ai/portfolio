@@ -22,13 +22,13 @@ import useStore from './Store'
       sx={{ overflow: 'scroll', width: '200px' }}
     >
       {
-        portfolios[portfolioNumber].projects.map((project, index) => (
+        portfolios[portfolioNumber].projects.map((element, index) => (
           <Chip
             key={`project ${index}`}
-            label={`${project.name}`}
-            variant='contained'
+            label={`${element.name}`}
+            variant= {project===index ? 'contained':'outlined'}
             onClick={async () => {
-              // onGoToLocation(project.lat, project.lng, 14)
+              onGoToLocation(element.lat, element.lng, 14)
               setProject(index)
               onClose()
             }}

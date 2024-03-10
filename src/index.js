@@ -17,7 +17,6 @@ import useStore from './Store';
 const Sample = () =>{
 const [dark, setDark] = useState(false)
 const { portfolio} = useStore();
-console.log('colorTheme', portfolio.colorTheme)
 
   return(
     <React.StrictMode>
@@ -31,9 +30,6 @@ console.log('colorTheme', portfolio.colorTheme)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Sample/>);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
 

@@ -11,9 +11,8 @@ export default function AutocompleteInput({title, elements=[
     { title: 'Option4' },
   ]
 }) {
-  const handleContentChange = (e) => {
-    console.log('e from change', e)
-  };
+  const handleContentChange = (e) => {}
+
   return (
     <Stack spacing={3} sx={{minWidth:'250px'}}>
       <Autocomplete

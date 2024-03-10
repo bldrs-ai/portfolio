@@ -92,19 +92,22 @@ function App({changeTheme, darkTheme}) {
   return (
     <>
     <AppBar darkTheme={darkTheme} changeTheme={changeTheme} onGoToLocation={triggerGoToLocation}/>
-    {!isMobile &&
-      <Drawer
-        topPanelName={'Info'}
-        topPanel={<PropertiesList/>}
-        topPanelButton={<PropertiesButtons/>}
-        side={'right'}
-        isOpen={rightDrawer}
-        setIsOpen={toggleRightDrawer}
-        showFirstPanel={true}
-        showSecondPanel={false}
-      />
-    }
-    {isMobile && <MobileDrawer panels={[<PropertiesList/>]}/>}
+
+      {!isMobile &&
+        <Drawer
+          topPanelName={'Info'}
+          topPanel={<PropertiesList/>}
+          topPanelButton={<PropertiesButtons/>}
+          side={'right'}
+          isOpen={rightDrawer}
+          setIsOpen={toggleRightDrawer}
+          showFirstPanel={true}
+          showSecondPanel={false}
+        />
+      }
+
+      {isMobile && <MobileDrawer panels={[<PropertiesList/>]}/>}
+
       <Box
         sx={{
           position:'fixed',
@@ -115,37 +118,38 @@ function App({changeTheme, darkTheme}) {
       >
         <Map ref={mapComponentRef}/>
       </Box>
+
       <Stack
         direction="column"
         justifyContent="space-between"
         alignItems="center"
         sx={{position:'fixed',  left:'14px', top: '84px', height:'88%', zIndex:100}}
       >
-          <Dialog
-            iconButton={true}
-            tabs={true}
-            tabList={['Info']}
-            dialogTitle={
-            <Stack
-            alignItems={'center'}
-            justifyContent={'center'}
-            direction='row'
-            spacing={1}
-            >
-              {logo[portfolioNumber]}
-                <Typography variant={'body1'} color='primary'>
-                {portfolio.name}
-                </Typography>
-              </Stack>
-            }
-            dialogContent1={
-              <AboutShare/>
-            }
-            dialogContent3={
-              <Help/>
-            }
-            icon={<HelpOutlineIcon size='inherit' color='primary'/>}
-          />
+        <Dialog
+          iconButton={true}
+          tabs={true}
+          tabList={['Info']}
+          dialogTitle={
+          <Stack
+          alignItems={'center'}
+          justifyContent={'center'}
+          direction='row'
+          spacing={1}
+          >
+            {logo[portfolioNumber]}
+              <Typography variant={'body1'} color='primary'>
+              {portfolio.name}
+              </Typography>
+            </Stack>
+          }
+          dialogContent1={
+            <AboutShare/>
+          }
+          dialogContent3={
+            <Help/>
+          }
+          icon={<HelpOutlineIcon size='inherit' color='primary'/>}
+        />
       </Stack>
 
       <Stack

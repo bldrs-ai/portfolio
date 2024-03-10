@@ -46,7 +46,6 @@ export default function SideDrawer2({
 
   const handlePanelSelectionFirst = (event) => {
     const panel = event.target.value;
-    console.log('panel', panel)
     if (panel === 'top') {
       setFirstPanel('first')
     } else if (panel === 'bottom') {

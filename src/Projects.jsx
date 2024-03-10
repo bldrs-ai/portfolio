@@ -6,7 +6,6 @@ import useStore from './Store'
 
  export default function Projects({onGoToLocation, onClose}){
   const {portfolios, portfolioNumber, project, setProject} = useStore()
-  console.log('project', project)
 
   return(
     <Stack

@@ -12,8 +12,6 @@ const Map = forwardRef((props, ref) => {
   const goToLocation = (lat, lng, zoom = 7) => {
     const map = mapRef.current.getMap();
     map.flyTo({ center: [lng, lat], zoom, essential: true, duration: 5000});
-    console.log('zoom', zoom)
-
   };
 
   const onMarkerClick = (markerId) => {

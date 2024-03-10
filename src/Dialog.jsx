@@ -76,7 +76,7 @@ export default function Dialog({
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button variant="contained" size='small' onClick={handleClose}>{actionTitle}</Button>
+          <Button variant="outlined" size='small' onClick={handleClose}>{actionTitle}</Button>
         </DialogActions>
       </MuiDialog>
     </div>

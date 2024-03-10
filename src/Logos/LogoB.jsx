@@ -7,8 +7,6 @@ import {colors} from '../colors'
 export default function Logo({scale=1.0}){
   const {portfolio } = useStore();
 
-console.log('colors[portfolio.colorTheme]', )
-
 return(
   <SvgIcon sx={{transform: `scale(${scale})`}}>
     <svg width="284" height="284" viewBox="0 0 284 284" fill="none" xmlns="http://www.w3.org/2000/svg">

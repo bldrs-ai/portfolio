@@ -99,7 +99,7 @@ const useStore = create((set) => ({
       ]
     },
     {
-      name:'Copenhagen AEC',
+      name:'Prop Tech Denmark Challenge',
       colorTheme:1,
       map:'mapbox://styles/aechack2024/cltaoevq300uu01pje4rwdi24',
       coordinates: {
@@ -109,7 +109,7 @@ const useStore = create((set) => ({
       },
       projects:[
         {
-          name: "Project 3",
+          name: "BloxHub Sample project",
           lat: 55.672278,
           lng: 12.5785,
           projectInfo:[
@@ -123,42 +123,6 @@ const useStore = create((set) => ({
           ]
 
         },
-        {
-          name: "Project 4",
-          lat: 55.6273872,
-          lng: 12.579409,
-          projectInfo:[
-            {
-                "name": "http://example.com/buildings/BB/ESP1",
-                "label": "Replacement of light bulbs on the back stairss and in the basement",
-                "investment": "1000",
-                "calculatedAnnualSavings": "2800",
-                "simpleRepaymentPeriod": "0.4"
-            },
-            {
-                "iri": "http://example.com/buildings/BB/ESP1",
-                "label": "Re-insulation of floor towards the outside",
-                "investment": "23400",
-                "calculatedAnnualSavings": "1600",
-                "simpleRepaymentPeriod": "15"
-            },
-            {
-                "iri": "http://example.com/buildings/BB/ESP2",
-                "label": "Re-insulation of hot water risers",
-                "investment": "19200",
-                "calculatedAnnualSavings": "5600",
-                "simpleRepaymentPeriod": "3.5"
-            },
-            {
-                "iri": "http://example.com/buildings/BB/ESP3",
-                "label": "Re-insulation of molded floor covering against unheated basement",
-                "investment": "236000",
-                "calculatedAnnualSavings": "6500",
-                "simpleRepaymentPeriod": "36"
-            }
-          ]
-
-        }
       ]
     ,
     }

@@ -1,21 +1,22 @@
 import React, { useRef, useImperativeHandle, forwardRef, useState } from 'react';
-import MapGL, { Marker } from 'react-map-gl';
+import MapGL, { Marker, Popup } from 'react-map-gl'; // Make sure to import Popup
 import { useTheme } from '@mui/material/styles';
 import useStore from './Store';
 
 const Map = forwardRef((props, ref) => {
   const mapRef = useRef();
   const [activeMarker, setActiveMarker] = useState(null);
+  const [hoveredMarker, setHoveredMarker] = useState(null); // New state for hovered marker
   const theme = useTheme()
-  const {portfolio, portfolios, portfolioNumber, project, setProject} = useStore();
+  const { portfolio, portfolios, portfolioNumber, project, setProject } = useStore();
 
   const goToLocation = (lat, lng, zoom = 7) => {
     const map = mapRef.current.getMap();
-    map.flyTo({ center: [lng, lat], zoom, essential: true, duration: 5000});
+    map.flyTo({ center: [lng, lat], zoom, essential: true, duration: 5000 });
   };
 
   const onMarkerClick = (markerId) => {
-    setProject(markerId)
+    setProject(markerId);
   };
 
   useImperativeHandle(ref, () => ({ goToLocation }));
@@ -24,6 +25,7 @@ const Map = forwardRef((props, ref) => {
     width: '16px',
     height: '16px',
     borderRadius: '50%',
+    cursor: 'pointer', // Added cursor pointer for better UX
   };
 
   return (
@@ -33,16 +35,15 @@ const Map = forwardRef((props, ref) => {
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
       mapStyle={portfolio.map}
     >
-      {
-        portfolios[portfolioNumber].projects.map((element, index) => (
-        <Marker latitude={element.lat} longitude={element.lng}>
-          <button onClick={() => {
-            if(activeMarker === index){
-              onMarkerClick(null)
-            }else{
-              onMarkerClick(index)
-            }
-          }} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+      {portfolios[portfolioNumber].projects.map((element, index) => (
+        <Marker key={index} latitude={element.lat} longitude={element.lng}>
+          <div
+            onMouseEnter={() => setHoveredMarker(index)} // Set hovered marker
+            onMouseLeave={() => setHoveredMarker(null)} // Unset hovered marker
+            onClick={() => onMarkerClick(index === activeMarker ? null : index)}
+            style={markerStyle}
+
+          >
             <div
               style={{
                 ...markerStyle,
@@ -50,32 +51,25 @@ const Map = forwardRef((props, ref) => {
                 border: project === index ? `2px solid ${theme.palette.primary.main}` : `2px solid ${theme.palette.secondary.main}`,
               }}
             />
-          </button>
+          </div>
+          {hoveredMarker === index && (
+            <Popup
+              latitude={element.lat}
+              longitude={element.lng}
+              closeButton={false}
+              closeOnClick={false}
+              offsetTop={-30}
+            >
+              {/* Customize your popup content here */}
+              <div style={{ color: theme.palette.text.primary }}>
+                {element.name} {/* Assuming each element has a name property */}
+              </div>
+            </Popup>
+          )}
         </Marker>
-        ))
-      }
-      {/* <Marker latitude={47.3769} longitude={8.5417}>
-        <button onClick={() => {
-          if(activeMarker === 'marker1'){
-            onMarkerClick('')
-          }else{
-            onMarkerClick('marker1')
-          }
-        }} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-          <div
-            style={{
-              ...markerStyle,
-              backgroundColor: activeMarker === 'marker1' ? theme.palette.secondary.main : theme.palette.primary.main,
-              border: activeMarker === 'marker1' ? `2px solid ${theme.palette.primary.main}` : `2px solid ${theme.palette.secondary.main}`,
-            }}
-          />
-        </button>
-      </Marker> */}
-      {/* You can add more markers here */}
+      ))}
     </MapGL>
   );
 });
 
 export default Map;
-
-

@@ -32,8 +32,8 @@ function App({changeTheme, darkTheme}) {
   return (
     <Router>
       <Routes>
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/share" element={<Share/>} />
+        <Route path="/prototype" element={<Portfolio />} />
+        <Route path="/portfolio" element={<Share/>} />
       </Routes>
     </Router>
   )

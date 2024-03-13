@@ -165,6 +165,25 @@ export const themeComponent = {
         }),
       },
     },
+    MuiSelect: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          borderRadius: '20px',
+          // Apply border color using theme
+          border: `1px solid ${theme.palette.primary.main}`,
+          '& .MuiOutlinedInput-notchedOutline': {
+            borderColor: 'transparent', // Remove default border
+          },
+          '&:hover .MuiOutlinedInput-notchedOutline': {
+            borderColor: `${theme.palette.primary.main} !important`, // Maintain border color on hover
+          },
+          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+            borderColor: `${theme.palette.primary.main} !important`, // Maintain border color when focused
+          },
+        }),
+      },
+    },
+
   },
 }
 

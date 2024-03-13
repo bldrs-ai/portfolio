@@ -13,6 +13,7 @@ import IconButton from '@mui/material/IconButton';
 export default function Dialog({
   buttonLabel='dialog',
   iconButton=false,
+  noTitle=false,
   icon,
   buttonColor='primary',
   dialogTitle='dialog',
@@ -52,9 +53,11 @@ export default function Dialog({
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title" >
-          {dialogTitle}
-        </DialogTitle>
+        {!noTitle &&
+          <DialogTitle id="alert-dialog-title" >
+            {dialogTitle}
+          </DialogTitle>
+        }
         <DialogContent
           sx={{maxWidth:'300px'}}
         >

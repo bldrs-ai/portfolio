@@ -100,7 +100,7 @@ const RightSide = ({onGoToLocation}) => {
         tabs={false}
         tabList={['Recent']}
         dialogTitle={
-          <Typography>
+          <Typography variant='overline'>
             Github Resources
           </Typography>
         }

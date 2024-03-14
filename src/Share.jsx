@@ -87,11 +87,8 @@ function Share() {
         {!showBldrs &&
         <Stack justifyContent={'center'} alignItems={'center'} spacing={1}>
           <Typography>
-          Bldrs.ai can be easily integrated into other websites using an iframe.
-        </Typography>
-          <Typography>
             {iframeString}
-        </Typography>
+          </Typography>
         </Stack>
         }
     </Stack>

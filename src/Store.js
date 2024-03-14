@@ -5,6 +5,7 @@ const useStore = create((set) => ({
   borderRadius: 16,
   themeScheme: 0,
   showComponents: false,
+  showBldrs:true,
   showComments: false,
   circles:[],
   res:[],
@@ -142,6 +143,7 @@ const useStore = create((set) => ({
   setPortfolio: (value) => set(() => ({ portfolio: value })), // Function to update 'res'
   setPortfolioNumber: (value) => set(() => ({ portfolioNumber : value })), // Function to update 'res'
   toggleShowViewer: () => set((state) => ({ showViewer: !state.showViewer })),
+  toggleShowBldrs: () => set((state) => ({ showBldrs: !state.showBldrs })),
 }));
 
 export default useStore;

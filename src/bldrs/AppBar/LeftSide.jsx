@@ -10,6 +10,11 @@ import Button from '@mui/material/Button';
 
 
 const LeftSide = ({onGoToLocation}) => {
+  const {
+   showBldrs,
+   toggleShowBldrs
+  } = useStore();
+
   return(
     <Stack
     direction='row'
@@ -30,7 +35,7 @@ const LeftSide = ({onGoToLocation}) => {
       >
         <LogoB/>
       </IconButton>
-      <Button variant="contained" size='small' sx={{borderRadius:'30px', fontWeight:'bold'}}  color='primary'>
+      <Button variant={showBldrs?"contained":'outlined'} size='small' sx={{borderRadius:'30px', fontWeight:'bold'}}  color='primary' onClick={()=>toggleShowBldrs()}>
           bldrs.ai
         </Button>
       {/* <Dialog

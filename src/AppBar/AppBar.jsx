@@ -17,8 +17,8 @@ const searchElements = [
 
 
 export default function PrimaryAppBar({ darkTheme, changeTheme, onGoToLocation }) {
-  const isMobile = useMediaQuery('(max-width:600px)');
   const theme = useTheme()
+  const isMobile = useMediaQuery('(max-width:600px)');
 
   return (
     <AppBar

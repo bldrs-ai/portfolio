@@ -11,6 +11,8 @@ import PlayCircleOutlinedIcon from '@mui/icons-material/PlayCircleOutlined';
 import useStore from '../../Store';
 import { useTheme } from '@emotion/react';
 import {colors} from '../../colors'
+import DialogFullPage from '../../DialogFullPage';
+import DialogStory from '../../DialogStory'
 
 import Divider from '@mui/material/Divider';
 
@@ -47,11 +49,6 @@ return(
 )
 }
 
-
-const Tutorials = () => {
-
-}
-
 const RightSide = ({onGoToLocation}) => {
   return(
     <Stack
@@ -60,7 +57,7 @@ const RightSide = ({onGoToLocation}) => {
     sx={{marginRight:'-15px'}}
     >
       <Stack   direction="row">
-      <Dialog
+      {/* <Dialog
         actionTitle={'OK'}
         icon={ <InfoOutlinedIcon size='inherit'/>}
         buttonColor={'primary'}
@@ -75,24 +72,10 @@ const RightSide = ({onGoToLocation}) => {
         dialogContent={
           <GithubPanel/>
         }
-      />
-      <Dialog
-        actionTitle={'OK'}
-        icon={<PlayCircleOutlinedIcon size='inherit'/>}
-        buttonColor={'primary'}
-        iconButton={true}
-        tabs={false}
-        tabList={['Recent']}
-        dialogTitle={
-          <Typography>
-            Video Tutorials
-          </Typography>
-        }
-        dialogContent={
-          <GithubPanel/>
-        }
-      />
-      <Dialog
+      /> */}
+      <DialogStory/>
+      <DialogFullPage/>
+      {/* <Dialog
         actionTitle={'OK'}
         icon={<ColorLensOutlinedIcon size='inherit'/>}
         buttonColor={'primary'}
@@ -107,7 +90,7 @@ const RightSide = ({onGoToLocation}) => {
         dialogContent={
           <Colors/>
         }
-      />
+      /> */}
       </Stack>
       <Dialog
         actionTitle={'OK'}

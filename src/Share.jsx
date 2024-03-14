@@ -67,10 +67,9 @@ function Share() {
         position:'fixed',
         width:'100%',
         height:'100%',
-        // background: 'black'
       }}
     >
-      <iframe style={{width:isMobile?'90%':'60%', height:'70%', borderRadius:'20px'}}
+      <iframe style={{width:isMobile?'90%':'60%', height:'80%', borderRadius:'20px', marginTop:'30px'}}
         title='model'
         src="https://bldrs.ai/share/v/gh/OlegMoshkovich/Bldrs_Plaza/main/IFC_STUDY.ifc#c:207.638,-8.074,196.438,-10.793,38.17,-3.936" width="100%"  frameborder="0">
             Your browser does not support iframes.

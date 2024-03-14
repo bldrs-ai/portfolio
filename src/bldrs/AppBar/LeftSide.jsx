@@ -23,6 +23,9 @@ const LeftSide = ({onGoToLocation}) => {
         aria-label="account of current user"
         aria-haspopup="true"
         color="inherit"
+        onClick={async () => {
+          window.open('https://www.bldrs.ai', '_blank', 'noopener, noreferrer')
+        }}
         sx={{border:'none'}}
       >
         <LogoB/>
@@ -32,7 +35,7 @@ const LeftSide = ({onGoToLocation}) => {
         </Button>
       {/* <Dialog
         actionTitle={'OK'}
-        buttonLabel={'bldrs.ai'}
+        buttonLabel={'projects'}
         buttonColor={'primary'}
         tabs={false}
         tabList={['Recent']}

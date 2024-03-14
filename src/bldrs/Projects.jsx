@@ -8,30 +8,214 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Stack from '@mui/material/Stack'
-import Input from '@mui/material/Input';
+import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import CreateNewFolderOutlinedIcon from '@mui/icons-material/CreateNewFolderOutlined'
 import FormHelperText from '@mui/material/FormHelperText';
 import UploadFileOutlinedIcon from '@mui/icons-material/UploadFileOutlined';
 import { useTheme } from '@mui/material/styles';
+import Accordian from '../Accordian';
+import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
 
 
 export function Projects(){
   const [repo, setRepo] = React.useState(20);
   const [org, setOrg] = React.useState('sp');
   const [file, setFile] = React.useState(10);
-  const [save, setSave] = React.useState('');
+  const [save, setSave] = React.useState(false);
   const [deleteMode, setDeleteMode] = React.useState(false);
   const [version, setVersion] = React.useState(true);
-  const theme = useTheme()
 
+  const SaveAction = () => {
+    return(
+      <>
+        <Stack
+          direction='row'
+          justifyContent="center"
+          spacing={1}
+          sx={{padding: '0px 0px 10px 0px'}}
+        >
+          <Chip label="New model" onClick={()=>setVersion(false)} variant={version ? 'outlined' : ''} color='primary'/>
+          <Chip label="New version" onClick={()=>setVersion(true)} variant={version ? '' : 'outlined'} color='primary'/>
+        </Stack>
+        {version &&
+          <FormControl fullWidth>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={file}
+              onChange={handleChangeFiles}
+              size='small'
+            >
+              <MenuItem value={null}>...</MenuItem>
+              <MenuItem value={20}>One</MenuItem>
+              <MenuItem value={30}>Two</MenuItem>
+              <MenuItem value={40}>Three</MenuItem>
+            </Select>
+            <FormHelperText>Choose model to version</FormHelperText>
+          </FormControl>
+        }
+        {!version &&
+          <FormControl variant="standard">
+          <TextField
+        fullWidth
+        variant="outlined"
+        size="small"
+        multiline
+        placeholder="Model name"
+        helperText='Please include the extension'
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <IconButton edge="end" size="small" sx={{border:'none', width:20, height:20}}>
+                <ArrowForwardOutlinedIcon color='primary'/>
+              </IconButton>
+            </InputAdornment>
+          ),
+        }}
+        sx={{
+          '& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+            borderColor: 'green', // Increased specificity
+          },
+        }}
+      />
+        </FormControl>
+        }
+    </>
+    )
+  }
+  const DeleteComponent = () => {
+    return(
+      <>
+        {deleteMode &&
+          <Button sx={{marginTop:'20px', shadow: 'none'}} variant="contained" disabled={file === 10}>
+            Delete
+          </Button>
+        }
+      </>
+    )
+  }
+  const LocationComponent = ({includeCreate}) => {
+    return(
+      <Stack>
+        <Typography variant='overline' sx={{textAlign: 'center'}}>
+          Repositories
+        </Typography>
+        <FormControl fullWidth>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={repo}
+            onChange={handleChangeRepos}
+            size='small'
+          >
+            <MenuItem value={10}>...</MenuItem>
+            <MenuItem value={20}>One</MenuItem>
+            <MenuItem value={30}>Two</MenuItem>
+            <MenuItem value={40}>Three</MenuItem>
+          </Select>
+        </FormControl>
+        <Typography variant='overline' sx={{textAlign: 'center'}}>
+          Folders
+        </Typography>
+        <FormControl fullWidth >
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={file}
+            onChange={handleChangeFiles}
+            size='small'
+          >
+            <MenuItem value={10}>...</MenuItem>
+            <MenuItem value={20}>One</MenuItem>
+            <MenuItem value={30}>Two</MenuItem>
+            <MenuItem value={40}>Three</MenuItem>
+          </Select>
+        </FormControl>
+        <Typography variant='overline' sx={{textAlign: 'center'}}>
+          Files
+        </Typography>
+        <FormControl fullWidth>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={file}
+            onChange={handleChangeFiles}
+            size='small'
 
+          >
+            <MenuItem value={10}>...</MenuItem>
+            <MenuItem value={20}>One</MenuItem>
+            <MenuItem value={30}>Two</MenuItem>
+            <MenuItem value={40}>Three</MenuItem>
+          </Select>
+        </FormControl>
+        {includeCreate &&
+          <Stack
+            direction='row'
+            justifyContent="center"
+            spacing={1}
+            sx={{overflow: 'scroll', padding: '10px 0px 0px 0px'}}
+            >
+            <Chip label="Create New folder" onClick={()=>setVersion(false)} variant={'outlined'} color='primary'/>
+          </Stack>
+        }
+      </Stack>
+    )
+  }
+  const NavComponent = () => {
+    return(
+      <Stack
+      direction='row'
+      justifyContent="center"
+      spacing={1}
+      sx={{overflow: 'scroll'}}
+    >
+      <Chip label="Open"
+        onClick={()=>{
+          setSave(false)
+          setDeleteMode(false)
+        }
+        }
+        variant={(!save && !deleteMode) ? '' : 'outlined'}
+        color='primary'/>
+      <Chip label="Save"
+       onClick={()=>{
+       setSave(true)
+       setDeleteMode(false)
+       }} variant={save ? '' : 'outlined'} color='primary'/>
+      <Chip label="Delete"
+      onClick={()=>{
+        setSave(false)
+        setDeleteMode(true)
+      }} variant={deleteMode ? '' : 'outlined'} color='primary'/>
+    </Stack>
+    )
+  }
+  const Organizations = () => {
+    return(
+      <>
+        <Typography variant='overline' sx={{textAlign: 'center'}}>
+          Organizations
+        </Typography>
+        <Stack
+          direction='row'
+          justifyContent="center"
+          spacing={1}
+          sx={{overflow: 'scroll', paddingBottom: '10px'}}
+        >
+          <Chip label="Swiss Property" onClick={()=>handleOrgSelect('sp')} variant={org === 'sp' ? '' : 'outlined'} color='primary'/>
+          <Chip label="Bldrs.ai" onClick={()=>handleOrgSelect('bldrs')} variant={org==='bldrs' ? '' : 'outlined'} color='primary'/>
+        </Stack>
+      </>
+    )
+  }
   const handleChangeRepos = (event) => {
     setRepo(event.target.value);
-  };
+  }
   const handleChangeFiles = (event) => {
     setFile(event.target.value);
-  };
+  }
   const handleOrgSelect = (value) =>{
     if(org === 'sp' && value==='sp'){
       setOrg('')
@@ -45,219 +229,29 @@ export function Projects(){
     <Stack
     direction='column'
     justifyContent="center"
-    sx={{overflow: 'scroll', width:'270px'}}
+    sx={{overflow: 'scroll'}}
     >
-
-      <Stack
-        direction='row'
-        justifyContent="center"
-        spacing={1}
-        sx={{overflow: 'scroll', padding: '10px 0px'}}
-      >
-        <Chip label="Open"
-          onClick={()=>{
-            setSave(false)
-            setDeleteMode(false)
-          }
-          }
-          variant={(!save && !deleteMode) ? '' : 'outlined'}
-          color='primary'/>
-        <Chip label="Save"
-         onClick={()=>{
-         setSave(true)
-         setDeleteMode(false)
-         }} variant={save ? '' : 'outlined'} color='primary'/>
-        <Chip label="Delete"
-        onClick={()=>{
-          setSave(false)
-          setDeleteMode(true)
-        }} variant={deleteMode ? '' : 'outlined'} color='primary'/>
-      </Stack>
-      <Typography variant='overline' sx={{textAlign: 'center'}}>
-        Organizations
-      </Typography>
-      <Stack
-        direction='row'
-        justifyContent="center"
-        spacing={1}
-        sx={{overflow: 'scroll', paddingBottom: '10px'}}
-      >
-        <Chip label="Swiss Property" onClick={()=>handleOrgSelect('sp')} variant={org === 'sp' ? '' : 'outlined'} color='primary'/>
-        <Chip label="Bldrs.ai" onClick={()=>handleOrgSelect('bldrs')} variant={org==='bldrs' ? '' : 'outlined'} color='primary'/>
-      </Stack>
-      <Typography variant='overline' sx={{textAlign: 'center'}}>
-        Repositories
-      </Typography>
-      <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={repo}
-          onChange={handleChangeRepos}
-          size='small'
-          sx={{
-            borderRadius: '20px',
-            // Apply border color using theme
-            border: `1px solid ${theme.palette.primary.main}`,
-            '& .MuiOutlinedInput-notchedOutline': {
-              borderColor: 'transparent', // Remove default border
-            },
-            '&:hover .MuiOutlinedInput-notchedOutline': {
-              borderColor: `${theme.palette.primary.main} !important`, // Maintain border color on hover
-            },
-            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-              borderColor: `${theme.palette.primary.main} !important`, // Maintain border color when focused
-            },
-          }}
-        >
-          <MenuItem value={10}>...</MenuItem>
-          <MenuItem value={20}>One</MenuItem>
-          <MenuItem value={30}>Two</MenuItem>
-          <MenuItem value={40}>Three</MenuItem>
-        </Select>
-      </FormControl>
-    </Box>
-
-    { repo && !save &&
-      <>
-    <Typography variant='overline' sx={{textAlign: 'center'}}>
-        Folders
-      </Typography>
-      <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth >
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={file}
-          onChange={handleChangeFiles}
-          size='small'
-          sx={{ borderRadius: '20px' }}
-
-        >
-          <MenuItem value={10}>...</MenuItem>
-          <MenuItem value={20}>One</MenuItem>
-          <MenuItem value={30}>Two</MenuItem>
-          <MenuItem value={40}>Three</MenuItem>
-        </Select>
-      </FormControl>
-      </Box>
-      <Typography variant='overline' sx={{textAlign: 'center'}}>
-        Files
-      </Typography>
-      <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={file}
-          onChange={handleChangeFiles}
-          size='small'
-          sx={{ borderRadius: '20px' }}
-        >
-          <MenuItem value={10}>...</MenuItem>
-          <MenuItem value={20}>One</MenuItem>
-          <MenuItem value={30}>Two</MenuItem>
-          <MenuItem value={40}>Three</MenuItem>
-        </Select>
-      </FormControl>
-      </Box>
-      {deleteMode &&
-        <Button sx={{marginTop:'20px', shadow: 'none'}} variant="contained" disabled={file === 10}>
-          Delete
-        </Button>
-      }
-    </>
-    }
-
-      { repo && save &&
-      <>
-    <Typography variant='overline' sx={{textAlign: 'center'}}>
-        Folders
-      </Typography>
-      <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={file}
-          onChange={handleChangeFiles}
-          size='small'
-          sx={{ borderRadius: '20px' }}
-        >
-          <MenuItem value={10}>...</MenuItem>
-          <MenuItem value={20}>One</MenuItem>
-          <MenuItem value={30}>Two</MenuItem>
-          <MenuItem value={40}>Three</MenuItem>
-        </Select>
-      </FormControl>
-      <Stack
-        direction='row'
-        justifyContent="center"
-        spacing={1}
-        sx={{overflow: 'scroll', padding: '10px 0px 0px 0px'}}
-      >
-        <Chip label="Create New folder" onClick={()=>setVersion(false)} variant={'outlined'} color='primary'/>
-      </Stack>
-      </Box>
-      <Typography variant='overline' sx={{textAlign: 'center', paddingTop: '20px'}}>
-        Action
-      </Typography>
-      <Stack
-        direction='row'
-        justifyContent="center"
-        spacing={1}
-        sx={{overflow: 'scroll', padding: '0px 0px 30px 0px'}}
-      >
-        <Chip label="Create New Model" onClick={()=>setVersion(false)} variant={version ? 'outlined' : ''} color='primary'/>
-        <Chip label="Create a Version" onClick={()=>setVersion(true)} variant={version ? '' : 'outlined'} color='primary'/>
-      </Stack>
-      {version &&
-        <Box sx={{ minWidth: 120 }}>
-        <FormControl fullWidth>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={file}
-            onChange={handleChangeFiles}
-            size='small'
-          >
-            <MenuItem value={null}>...</MenuItem>
-            <MenuItem value={20}>One</MenuItem>
-            <MenuItem value={30}>Two</MenuItem>
-            <MenuItem value={40}>Three</MenuItem>
-          </Select>
-          <FormHelperText>Choose model to version</FormHelperText>
-        </FormControl>
-
-        </Box>
-
-      }
-      {!version &&
-        <FormControl variant="standard">
-        <Input
-          id="input-with-icon-adornment"
-          startAdornment={
-            <InputAdornment position="start" size = 'small'>
-              <UploadFileOutlinedIcon size = 'small'/>
-            </InputAdornment>
-          }
+      <NavComponent/>
+      <Organizations/>
+      <Stack spacing={1}>
+        <Accordian
+          key={1}
+          title={<Typography variant = 'overline'>Location</Typography>}
+          content={<LocationComponent includeCreate = {save}/>}
+          width={270}
         />
-        <Typography variant='caption'>
-          Please include file extension in the name
-        </Typography>
-      </FormControl>
-      }
-    </>
-    }
-
-
-
-{ repo && save &&
-      <>
-
-    </>
-    }
+        { repo && !save &&
+          <DeleteComponent/>
+        }
+        { repo && save &&
+          <Accordian
+          key={1}
+          title={<Typography variant = 'overline'>Action</Typography>}
+          content={<SaveAction/>}
+          width={270}
+        />
+        }
+      </Stack>
     </Stack>
   )
 }
@@ -286,3 +280,6 @@ export function Recent(){
   </Stack>
   )
 }
+
+
+

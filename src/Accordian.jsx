@@ -5,20 +5,20 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-export default function BasicAccordion({title, content, expand=false}) {
+export default function BasicAccordion({title, content, expand=false, width=350}) {
   const [expanded, setExpanded] = React.useState(expand);
   const handleChange = () => {
-    // Toggle the expanded state
     setExpanded(!expanded);
   };
   return (
-      <Accordion elevation={0} expanded={expanded} onChange={handleChange} sx={{width: '350px'}}>
+      <Accordion elevation={0} expanded={expanded} onChange={handleChange} sx={{width: width, border:'1px solid green'}} size='small'>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
+          sx={{ width: width, borderRadius: 20, height:10}}
         >
-          <Typography>{title}</Typography>
+          {title}
         </AccordionSummary>
         <AccordionDetails>
           <Typography>

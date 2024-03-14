@@ -169,16 +169,29 @@ export const themeComponent = {
       styleOverrides: {
         root: ({ theme }) => ({
           borderRadius: '20px',
-          // Apply border color using theme
-          border: `1px solid ${theme.palette.primary.main}`,
           '& .MuiOutlinedInput-notchedOutline': {
-            borderColor: 'transparent', // Remove default border
+            borderColor: theme.palette.background.default,
           },
           '&:hover .MuiOutlinedInput-notchedOutline': {
             borderColor: `${theme.palette.primary.main} !important`, // Maintain border color on hover
           },
           '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
             borderColor: `${theme.palette.primary.main} !important`, // Maintain border color when focused
+          },
+        }),
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          '& .MuiOutlinedInput-notchedOutline': {
+            borderColor: theme.palette.background.paper, // Change this to your desired color for the rest state
+          },
+          '&:hover .MuiOutlinedInput-notchedOutline': {
+            borderColor: theme.palette.primary.main, // Change this to your desired color for hover
+          },
+          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+            borderColor: theme.palette.primary.main, // Change this to your desired color for focus
           },
         }),
       },

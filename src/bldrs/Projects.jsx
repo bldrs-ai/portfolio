@@ -11,6 +11,7 @@ import Stack from '@mui/material/Stack'
 import Input from '@mui/material/Input';
 import InputAdornment from '@mui/material/InputAdornment';
 import CreateNewFolderOutlinedIcon from '@mui/icons-material/CreateNewFolderOutlined'
+import FormHelperText from '@mui/material/FormHelperText';
 import UploadFileOutlinedIcon from '@mui/icons-material/UploadFileOutlined';
 import { useTheme } from '@mui/material/styles';
 
@@ -162,7 +163,7 @@ export function Projects(){
       </FormControl>
       </Box>
       {deleteMode &&
-        <Button sx={{marginTop:'20px'}} variant="contained" color="error" disabled={file === 10}>
+        <Button sx={{marginTop:'20px', shadow: 'none'}} variant="contained" disabled={file === 10}>
           Delete
         </Button>
       }
@@ -226,7 +227,9 @@ export function Projects(){
             <MenuItem value={30}>Two</MenuItem>
             <MenuItem value={40}>Three</MenuItem>
           </Select>
+          <FormHelperText>Choose model to version</FormHelperText>
         </FormControl>
+
         </Box>
 
       }
@@ -241,7 +244,7 @@ export function Projects(){
           }
         />
         <Typography variant='caption'>
-          Please include file extension
+          Please include file extension in the name
         </Typography>
       </FormControl>
       }

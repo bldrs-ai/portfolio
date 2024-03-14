@@ -2,6 +2,7 @@ import * as React from 'react';
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography';
 import LogoB from '../../Logos/LogoB'
+import LogoGit from '../../Logos/LogoGit'
 import Stack from '@mui/material/Stack'
 import Dialog from '../../Dialog'
 import Portfolios from '../../Portfolios'
@@ -27,7 +28,7 @@ const RightSide = ({onGoToLocation}) => {
       </Button>
       <Dialog
         actionTitle={'OK'}
-        icon={<LogoB/>}
+        icon={<LogoGit/>}
         buttonColor={'primary'}
         iconButton={true}
         tabs={false}
@@ -38,7 +39,7 @@ const RightSide = ({onGoToLocation}) => {
           </Typography>
         }
         dialogContent={
-          <Portfolios onGoToLocation={onGoToLocation}/>
+          <Portfolios/>
         }
       />
     </Stack>

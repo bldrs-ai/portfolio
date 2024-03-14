@@ -9,6 +9,7 @@ import Portfolios from '../Portfolios'
 
 
 
+
 const RightSide = ({onGoToLocation}) => {
   return(
     <Stack

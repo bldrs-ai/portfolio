@@ -3,6 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import LogoSP from '../../Logos/LogoSP'
 import LogoCP from '../../Logos/LogoPortfolio'
+import LogoB from '../../Logos/LogoB'
 import Stack from '@mui/material/Stack'
 import Dialog from '../../Dialog'
 import {Projects} from '../Projects'
@@ -28,9 +29,8 @@ const LeftSide = ({onGoToLocation}) => {
         aria-haspopup="true"
         color="inherit"
         sx={{border:'none'}}
-        onClick={()=>onGoToLocation(portfolios[portfolioNumber].coordinates.lat, portfolios[portfolioNumber].coordinates.lng, 14)}
       >
-        {logo[portfolioNumber]}
+        <LogoB/>
       </IconButton>
       <Dialog
         actionTitle={'OK'}

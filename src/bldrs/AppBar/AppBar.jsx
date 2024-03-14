@@ -28,7 +28,7 @@ export default function PrimaryAppBar({ darkTheme, changeTheme, onGoToLocation }
     >
     <Toolbar>
       <LeftSide onGoToLocation={onGoToLocation}/>
-      {!isMobile &&
+      {/* {!isMobile &&
         <Stack
           direction='row'
           alignItems="center"
@@ -38,7 +38,7 @@ export default function PrimaryAppBar({ darkTheme, changeTheme, onGoToLocation }
         >
           <Autocomplete title={"Search"} elements={searchElements}/>
         </Stack>
-      }
+      } */}
       <Box sx={{ flexGrow: 1 }} />
       <RightSide onGoToLocation={onGoToLocation}/>
       </Toolbar>

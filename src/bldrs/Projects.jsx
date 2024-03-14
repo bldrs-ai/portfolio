@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Chip from '@mui/material/Chip'
-import Box from '@mui/material/Box';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -10,10 +11,7 @@ import Select from '@mui/material/Select';
 import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import CreateNewFolderOutlinedIcon from '@mui/icons-material/CreateNewFolderOutlined'
 import FormHelperText from '@mui/material/FormHelperText';
-import UploadFileOutlinedIcon from '@mui/icons-material/UploadFileOutlined';
-import { useTheme } from '@mui/material/styles';
 import Accordian from '../Accordian';
 import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
 
@@ -33,13 +31,13 @@ export function Projects(){
           direction='row'
           justifyContent="center"
           spacing={1}
-          sx={{padding: '0px 0px 10px 0px'}}
+          sx={{padding: '0px 0px 20px 0px'}}
         >
-          <Chip label="New model" onClick={()=>setVersion(false)} variant={version ? 'outlined' : ''} color='primary'/>
-          <Chip label="New version" onClick={()=>setVersion(true)} variant={version ? '' : 'outlined'} color='primary'/>
+          <Chip label="Model" onClick={()=>setVersion(false)} variant={version ? 'outlined' : ''} color='primary'/>
+          <Chip label="Version" onClick={()=>setVersion(true)} variant={version ? '' : 'outlined'} color='primary'/>
         </Stack>
         {version &&
-          <FormControl fullWidth>
+          <FormControl fullWidth >
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
@@ -75,7 +73,7 @@ export function Projects(){
         }}
         sx={{
           '& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
-            borderColor: 'green', // Increased specificity
+            borderColor: 'green',
           },
         }}
       />
@@ -84,22 +82,11 @@ export function Projects(){
     </>
     )
   }
-  const DeleteComponent = () => {
-    return(
-      <>
-        {deleteMode &&
-          <Button sx={{marginTop:'20px', shadow: 'none'}} variant="contained" disabled={file === 10}>
-            Delete
-          </Button>
-        }
-      </>
-    )
-  }
   const LocationComponent = ({includeCreate}) => {
     return(
       <Stack>
         <Typography variant='overline' sx={{textAlign: 'center'}}>
-          Repositories
+          Repository
         </Typography>
         <FormControl fullWidth>
           <Select
@@ -116,7 +103,7 @@ export function Projects(){
           </Select>
         </FormControl>
         <Typography variant='overline' sx={{textAlign: 'center'}}>
-          Folders
+          Folder
         </Typography>
         <FormControl fullWidth >
           <Select
@@ -133,7 +120,7 @@ export function Projects(){
           </Select>
         </FormControl>
         <Typography variant='overline' sx={{textAlign: 'center'}}>
-          Files
+          File
         </Typography>
         <FormControl fullWidth>
           <Select
@@ -151,15 +138,15 @@ export function Projects(){
           </Select>
         </FormControl>
         {includeCreate &&
-          <Stack
-            direction='row'
-            justifyContent="center"
-            spacing={1}
-            sx={{overflow: 'scroll', padding: '10px 0px 0px 0px'}}
-            >
-            <Chip label="Create New folder" onClick={()=>setVersion(false)} variant={'outlined'} color='primary'/>
-          </Stack>
+          <Button sx={{marginTop:'20px', shadow: 'none'}} variant="outlined" >
+            Create a folder
+          </Button>
         }
+          {deleteMode &&
+            <Button sx={{marginTop:'20px', shadow: 'none'}} variant="contained" disabled={file === 10}>
+              Delete
+            </Button>
+          }
       </Stack>
     )
   }
@@ -196,7 +183,7 @@ export function Projects(){
     return(
       <>
         <Typography variant='overline' sx={{textAlign: 'center'}}>
-          Organizations
+          Organization
         </Typography>
         <Stack
           direction='row'
@@ -231,27 +218,36 @@ export function Projects(){
     justifyContent="center"
     sx={{overflow: 'scroll'}}
     >
-      <NavComponent/>
-      <Organizations/>
-      <Stack spacing={1}>
-        <Accordian
-          key={1}
-          title={<Typography variant = 'overline'>Location</Typography>}
-          content={<LocationComponent includeCreate = {save}/>}
-          width={270}
-        />
-        { repo && !save &&
-          <DeleteComponent/>
-        }
+      <Stack sx={{padding:'20px 0px 20px 0px'}}>
+        <NavComponent/>
+      </Stack>
+
+      <Stack sx={{padding:'0px 0px 0px 0px'}}>
+        <Organizations/>
+      </Stack>
+
+      <List spacing={1}>
+      <ListItem  key={`accordian ${2}`}>
         { repo && save &&
           <Accordian
           key={1}
           title={<Typography variant = 'overline'>Action</Typography>}
           content={<SaveAction/>}
           width={270}
+          expand={true}
         />
         }
-      </Stack>
+      </ListItem>
+      <ListItem  key={`accordian ${1}`}>
+        <Accordian
+          key={1}
+          title={<Typography variant = 'overline'>Location</Typography>}
+          content={<LocationComponent includeCreate = {save}/>}
+          width={270}
+        />
+      </ListItem>
+
+      </List>
     </Stack>
   )
 }

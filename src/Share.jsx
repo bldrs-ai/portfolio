@@ -59,8 +59,10 @@ function Share() {
     <>
     <AppBar/>
     <Stack
+      direction='row'
       justifyContent="center"
       alignItems="center"
+      spacing={2}
       sx={{
         position:'fixed',
         width:'100%',
@@ -75,14 +77,6 @@ function Share() {
       </iframe>
     </Stack>
 
-    {/* </Box>
-      <Box sx={{position:'fixed', top:'300px', width:360, height:360}}>
-        <iframe
-          title='model'
-          src="https://deploy-preview-1010--bldrs-share.netlify.app/share/v/gh/Swiss-Property-AG/Schneestock-Public/main/ZGRAGGEN.ifc" width="100%"  frameborder="0">
-              Your browser does not support iframes.
-        </iframe>
-      </Box> */}
     </>
   );
 }

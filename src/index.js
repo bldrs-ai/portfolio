@@ -17,10 +17,11 @@ import useStore from './Store';
 const Sample = () =>{
 const [dark, setDark] = useState(false)
 const { portfolio} = useStore();
+const { colorTheme} = useStore();
 
   return(
     <React.StrictMode>
-        <ThemeProvider theme={dark ? darkTheme(portfolio.colorTheme) : lightTheme(portfolio.colorTheme)}>
+        <ThemeProvider theme={dark ? darkTheme(colorTheme) : lightTheme(colorTheme)}>
           <App changeTheme={() => setDark(!dark)} darkTheme={dark}/>
         </ThemeProvider>
       </React.StrictMode>

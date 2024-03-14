@@ -1,20 +1,15 @@
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import LogoSP from '../../Logos/LogoSP'
-import LogoCP from '../../Logos/LogoPortfolio'
 import LogoB from '../../Logos/LogoB'
 import Stack from '@mui/material/Stack'
 import Dialog from '../../Dialog'
 import {Projects} from '../Projects'
 import useStore from '../../Store';
-import {ConstructionOutlined} from '@mui/icons-material';
+import Button from '@mui/material/Button';
 
-
-const logo = [<LogoSP/>, <LogoCP/>]
 
 const LeftSide = ({onGoToLocation}) => {
-  const {portfolios, portfolioNumber} = useStore();
   return(
     <Stack
     direction='row'
@@ -32,9 +27,12 @@ const LeftSide = ({onGoToLocation}) => {
       >
         <LogoB/>
       </IconButton>
-      <Dialog
+      <Button variant="contained" size='small' sx={{borderRadius:'30px', fontWeight:'bold'}}  color='primary'>
+          bldrs.ai
+        </Button>
+      {/* <Dialog
         actionTitle={'OK'}
-        buttonLabel={'Projects'}
+        buttonLabel={'bldrs.ai'}
         buttonColor={'primary'}
         tabs={false}
         tabList={['Recent']}
@@ -47,7 +45,7 @@ const LeftSide = ({onGoToLocation}) => {
         dialogContent={
           <Projects onGoToLocation={onGoToLocation}/>
         }
-      />
+      /> */}
     </Stack>
     )
   }

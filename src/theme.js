@@ -46,7 +46,7 @@ export const themeComponent = {
     MuiList: {
       styleOverrides: {
         root: ({ theme }) => ({
-          backgroundColor: theme.palette.background.default, // use palette color here
+          backgroundColor: theme.palette.background.paper, // use palette color here
           padding:'0px',
         }),
       }
@@ -194,6 +194,27 @@ export const themeComponent = {
             borderColor: theme.palette.primary.main, // Change this to your desired color for focus
           },
         }),
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        filled: ({ theme }) => ({
+          backgroundColor: theme.palette.secondary.main,
+          '&:hover': {
+            backgroundColor: theme.palette.secondary.dark,
+          },
+        }),
+        outlined: ({ theme }) => ({
+          borderColor: theme.palette.primary.main,
+          '&&:hover': { // Increased specificity
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.common.white,
+          },
+        }),
+        root: {
+          fontSize: '1rem',
+          padding: '8px',
+        },
       },
     },
 

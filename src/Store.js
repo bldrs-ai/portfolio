@@ -15,6 +15,7 @@ const useStore = create((set) => ({
   isNavigationOpen: true,
   isTimelineOpen: true,
   showViewer: false,
+  colorTheme:0,
   res:[],
   project:0,
   portfolio: {
@@ -128,6 +129,7 @@ const useStore = create((set) => ({
     }
   ],
   setNotes: (value) => set(() => ({ notes: value})),
+  setColorTheme: (value) => set(() => ({ colorTheme: value})),
   setCircles: (value) => set(() => ({ circles: value})),
   setBorderRadius: (value) => set(() => ({ borderRadius: value})),
   setThemeScheme: (value) => set(() => ({ themeScheme: value})),

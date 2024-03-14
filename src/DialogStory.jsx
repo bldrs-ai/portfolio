@@ -23,7 +23,7 @@ const InfoCard = ({ title, logo: LogoComponent, description }) => (
   >
     <Typography>{title}</Typography>
     <Box sx={{ width: '100px', height: '100px', border: '1px solid white', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <LogoComponent  scale={3.5}/>
+      <LogoComponent scale={3.5}/>
     </Box>
     <Typography sx={{ padding: '14px', height: '130px' }}>{description}</Typography>
   </Stack>
@@ -35,7 +35,6 @@ const DialogFullPage = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const sections = [
-    // { title: 'Bldrs.ai mission', logo: LogoB, description: 'Our mission is to empower builders by developing an open infrastructure and CAD tools that enable modularity and reuse of 3D engineering assets. Our roll out development decisions are guided by our mission.' },
     { title: 'Build for builders', logo: Builder, description: 'We aim to simplify access to CAD data and project versions, sharing and searching of relevant 3D data, team collaboration in 3D.' },
     { title: 'Git enabled Versions', logo: LogoGit, description: 'Share is a platform for viewing and editing open source CAD models that is connected to GitHub.' },
     { title: 'Issue tracking', logo: Notes, description: 'We leverage GitHub\'s issue system for note-taking and connecting conversations directly to specific elements of the CAD models to enable collaboration.' },
@@ -64,11 +63,23 @@ const DialogFullPage = () => {
             </IconButton>
           </Toolbar>
         </AppBar>
-        <Stack direction={isMobile ? 'column' : 'row'} justifyContent="center" alignItems="center" sx={{ width: '100%', height: '100%' }} spacing={4}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: isMobile ? 'column' : 'row',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            alignItems: 'center',
+            overflow: 'auto',
+            width: '100%',
+            height: '100%',
+            '& > *': { m: 1 }, // Add some spacing around each InfoCard
+          }}
+        >
           {sections.map((section, index) => (
             <InfoCard key={index} title={section.title} logo={section.logo} description={section.description} />
           ))}
-        </Stack>
+        </Box>
       </Dialog>
     </>
   );

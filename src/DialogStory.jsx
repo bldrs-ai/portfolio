@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   AppBar, Box, Card, CardContent, CardMedia, Dialog, IconButton, Slide, Stack, Toolbar, Typography,
-  useMediaQuery, useTheme
+  useMediaQuery, useTheme, CardActions,Button,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
@@ -13,8 +13,8 @@ import Engine from './Logos/Logos_cards/Engine';
 
 const Transition = React.forwardRef((props, ref) => <Slide direction="up" ref={ref} {...props} />);
 
-const InfoCard = ({ title, logo: LogoComponent, description }) => (
-  <Card sx={{ width: 300, height: 320, borderRadius: 1, backgroundColor:'white', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+const InfoCard = ({ title, logo: LogoComponent, description, readMoreLink }) => (
+  <Card sx={{ width: 300, height: 320, borderRadius: 1, backgroundColor: 'white', display: 'flex', flexDirection: 'column' }}>
     <CardMedia sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '140px' }}>
       <LogoComponent scale={3.5}/>
     </CardMedia>
@@ -22,10 +22,13 @@ const InfoCard = ({ title, logo: LogoComponent, description }) => (
       <Typography gutterBottom variant="body1" component="div" textAlign="center">
         {title}
       </Typography>
-      <Typography variant="body2" color="text.secondary" textAlign="center" sx={{ height: '100%' }}>
+      <Typography variant="body2" color="text.secondary" textAlign="center">
         {description}
       </Typography>
     </CardContent>
+    <CardActions sx={{ justifyContent: 'flex-end', p: 1 }}>
+      <Button size="small" href={readMoreLink}> Read More </Button>
+    </CardActions>
   </Card>
 );
 

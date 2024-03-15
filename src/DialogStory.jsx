@@ -1,32 +1,32 @@
 import React from 'react';
 import {
-  AppBar, Box, Dialog, IconButton, Slide, Stack, Toolbar, Typography,
+  AppBar, Box, Card, CardContent, CardMedia, Dialog, IconButton, Slide, Stack, Toolbar, Typography,
   useMediaQuery, useTheme
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import LogoB from './Logos/Logos_cards/LogoB';
 import LogoB_top from './Logos/LogoB';
-import LogoGit from './Logos/Logos_cards/LogoGit';
 import Builder from './Logos/Logos_cards/Builder';
+import Versions from './Logos/Logos_cards/Versions';
 import Notes from './Logos/Logos_cards/Notes';
 import Engine from './Logos/Logos_cards/Engine';
 
 const Transition = React.forwardRef((props, ref) => <Slide direction="up" ref={ref} {...props} />);
 
 const InfoCard = ({ title, logo: LogoComponent, description }) => (
-  <Stack
-    justifyContent="center"
-    alignItems="center"
-    sx={{ width: '300px', height: '400px', border: '1px solid white', borderRadius: '20px', backgroundColor: 'white' }}
-    spacing={3}
-  >
-    <Typography>{title}</Typography>
-    <Box sx={{ width: '100px', height: '100px', border: '1px solid white', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+  <Card sx={{ width: 300, height: 320, borderRadius: 1, backgroundColor:'white', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+    <CardMedia sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '140px' }}>
       <LogoComponent scale={3.5}/>
-    </Box>
-    <Typography sx={{ padding: '14px', height: '130px' }}>{description}</Typography>
-  </Stack>
+    </CardMedia>
+    <CardContent sx={{ flexGrow: 1 }}>
+      <Typography gutterBottom variant="body1" component="div" textAlign="center">
+        {title}
+      </Typography>
+      <Typography variant="body2" color="text.secondary" textAlign="center" sx={{ height: '100%' }}>
+        {description}
+      </Typography>
+    </CardContent>
+  </Card>
 );
 
 const DialogFullPage = () => {
@@ -35,10 +35,10 @@ const DialogFullPage = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const sections = [
-    { title: 'Build for builders', logo: Builder, description: 'We aim to simplify access to CAD data and project versions, sharing and searching of relevant 3D data, team collaboration in 3D.' },
-    { title: 'Git enabled Versions', logo: LogoGit, description: 'Share is a platform for viewing and editing open source CAD models that is connected to GitHub.' },
-    { title: 'Issue tracking', logo: Notes, description: 'We leverage GitHub\'s issue system for note-taking and connecting conversations directly to specific elements of the CAD models to enable collaboration.' },
-    { title: 'Engine', logo: Engine, description: 'Our engine is designed to be speedy and impressive, offering quick geometry processing, and detailed access to complex IFC/STEP standards all in the browser' },
+    { title: 'Build for builders', logo: Builder, description: 'Our goal is to simplify the access to CAD data and project versions, as well as the sharing and searching of relevant 3D data, to enhance team collaboration in a 3D environment.' },
+    { title: 'Git enabled Versions', logo: Versions, description: 'We use github for versioning of the project because it is the best in class versioning system enabling the open source evolution of IT' },
+    { title: 'Issue tracking', logo: Notes, description: 'We leverage GitHub\'s issue system for note-taking and connecting conversations directly to specific elements of the CAD models to enable model based collaboration.' },
+    { title: 'Engine', logo: Engine, description: 'Our engine is designed from group up, offering quick geometry processing, and detailed access to complex IFC/STEP standards all in the browser.' },
   ];
 
   return (
@@ -69,11 +69,11 @@ const DialogFullPage = () => {
             flexDirection: isMobile ? 'column' : 'row',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            alignItems: 'center',
+            alignItems: 'center', // Align items in the center to ensure vertical centering
             overflow: 'auto',
             width: '100%',
             height: '100%',
-            '& > *': { m: 1 }, // Add some spacing around each InfoCard
+            '& > *': { m: 1 }, // Add some spacing around each Card
           }}
         >
           {sections.map((section, index) => (

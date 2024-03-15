@@ -47,14 +47,7 @@ export default function DialogFullPage() {
         onClose={handleClose}
         TransitionComponent={Transition}
       >
-        <AppBar
-        sx={{
-        position: 'relative',
-        shadow:'none',
-        zIndex: (theme) => theme.zIndex.drawer + 1,
-        borderBottom: `1px solid ${theme.palette.background.paper}`,
-        backgroundColor: theme.palette.background.default }}
-        >
+          <AppBar sx={{ position: 'relative', boxShadow: 'none', borderBottom: `1px solid ${theme.palette.divider}`, backgroundColor: theme.palette.background.default }}>
         <Toolbar>
             <Stack
             sx={{marginLeft:'-10px'}}
@@ -100,15 +93,15 @@ export default function DialogFullPage() {
         <iframe width="560" height="315" src="https://www.youtube.com/embed/TDHzYiibbP8?si=EYlLNsTM5myceSxP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </ListItem>
         <ListItem>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/TDHzYiibbP8?si=EYlLNsTM5myceSxP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/PICwLymxB0I?si=g_GDvPeD_KLjdy5z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </ListItem>
         </List>
         <List>
           <ListItem>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/TDHzYiibbP8?si=EYlLNsTM5myceSxP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/PFmVd3Ioakc?si=qqYIjjDJau5zydt6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </ListItem>
         <ListItem>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/TDHzYiibbP8?si=EYlLNsTM5myceSxP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/3-o3I9PU6-E?si=L3SvIkj6z6Ngu-Er" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </ListItem>
         </List>
         </Stack>

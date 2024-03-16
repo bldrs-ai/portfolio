@@ -90,7 +90,7 @@ export default function DialogFullPage() {
         >
         <List>
           <ListItem>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/TDHzYiibbP8?si=EYlLNsTM5myceSxPcontrols=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/PICwLymxB0I?si=g_GDvPeD_KLjdy5zcontrols=0 t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </ListItem>
         <ListItem>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/PICwLymxB0I?si=g_GDvPeD_KLjdy5zcontrols=0 t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

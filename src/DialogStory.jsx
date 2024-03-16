@@ -27,7 +27,7 @@ const InfoCard = ({ title, logo: LogoComponent, description, readMoreLink }) => 
       </Typography>
     </CardContent>
     <CardActions sx={{ justifyContent: 'flex-end', p: 1 }}>
-      <Button size="small" href={readMoreLink}> Read More </Button>
+      <Button size="small" href={readMoreLink}> Read More  </Button>
     </CardActions>
   </Card>
 );

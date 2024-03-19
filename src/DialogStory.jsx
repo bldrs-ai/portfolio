@@ -43,7 +43,7 @@ const DialogFullPage = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const sections = [
-    { title: 'Build for builders',
+    { title: 'Built for builders',
       logo: Builder,
       description: 'Our goal is to simplify the access to CAD data and project versions, as well as the sharing and searching of relevant 3D data, to enhance team collaboration in a 3D environment.',
       expandedDescription:

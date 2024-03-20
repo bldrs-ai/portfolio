@@ -117,6 +117,7 @@ const DialogFullPage = () => {
             width: '100%',
             height: '100%',
             '& > *': { m: 1 }, // Add some spacing around each Card
+            ...(isMobile && { '& > :last-child': { ml: '10px' } }), // Add 10px left margin to the last child if on mobile
           }}
         >
           {sections.map((section, index) => (

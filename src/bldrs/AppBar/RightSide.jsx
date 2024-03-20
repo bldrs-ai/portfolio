@@ -74,8 +74,8 @@ const RightSide = () => {
         tabs={false}
         tabList={['Recent']}
         dialogTitle={
-          <Typography>
-            Choose color theme
+          <Typography variant='overline'>
+              Color theme
           </Typography>
         }
         dialogContent={

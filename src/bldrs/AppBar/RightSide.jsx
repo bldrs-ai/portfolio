@@ -10,6 +10,8 @@ import useStore from '../../Store';
 import {colors} from '../../colors'
 import DialogFullPage from '../../DialogFullPage';
 import DialogStory from '../../DialogStory'
+import DialogMagic from '../../DialogMagic'
+
 
 
 const Colors = () => {
@@ -63,6 +65,7 @@ const RightSide = () => {
       <Stack   direction="row">
       <DialogFullPage/>
       <DialogStory/>
+      <DialogMagic/>
       <Dialog
         actionTitle={'OK'}
         icon={<ColorLensOutlinedIcon size='inherit'/>}

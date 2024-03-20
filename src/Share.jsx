@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import AppBar from './bldrs/AppBar/AppBar'
 import Paper from '@mui/material/Paper';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 
 const iframeString = `
@@ -18,6 +19,7 @@ function Share() {
   const {
     showBldrs,
    } = useStore();
+   const theme = useTheme()
 
   return (
     <Paper variant="background"
@@ -46,12 +48,17 @@ function Share() {
         </iframe>
       }
         {!showBldrs &&
-        <Paper >
+        <Paper
+        sx={{
+          backgroundColor: theme.palette.background.default,
+          color:theme.palette.primary.main
+        }}
+        >
           <Stack justifyContent={'center'} alignItems={'center'} spacing={1} sx={{padding:'20px'}}>
             <Typography sx={{textAlign:'center', padding:'0px 30px'}}>
               Bldrs.ai can be integrated into other websites using an iframe.
             </Typography>
-            <Typography>
+            <Typography sx={{fontWeight:'bold'}}>
               {iframeString}
             </Typography>
           </Stack>

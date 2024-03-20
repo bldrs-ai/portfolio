@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import Tabs from './Tabs'
 import {Stack} from '@mui/system';
 import IconButton from '@mui/material/IconButton';
+import { useTheme } from '@mui/material/styles';
 
 export default function Dialog({
   buttonLabel='dialog',
@@ -27,6 +28,7 @@ export default function Dialog({
 }) {
   const [open, setOpen] = useState(false);
   const [currentTab, setCurrentTab] = useState(0);
+  const theme = useTheme()
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -52,6 +54,12 @@ export default function Dialog({
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
+        PaperProps={{
+          sx: {
+            backgroundColor: theme.palette.background.default, // Style specifically for the Paper component
+            // Add more styling here as needed
+          }
+        }}
       >
         {!noTitle &&
           <DialogTitle id="alert-dialog-title" >

@@ -38,9 +38,15 @@ export default function DialogFullPage() {
 
   return (
     <React.Fragment>
-        <IconButton aria-label="edit" size='large' onClick={handleClickOpen} sx={{border:'none'}}>
-          {<PlayCircleOutlinedIcon size='inherit'/>}
-        </IconButton>
+      <Stack
+      direction="row"
+      alignItems="center"
+      sx={{marginRight:'10px'}}
+      >
+        <Button variant={'outlined'} size='small' sx={{borderRadius:'30px', fontWeight:'bold'}}  color='primary'  onClick={handleClickOpen}>
+          Tutorials
+        </Button>
+      </Stack>
       <Dialog
         fullScreen
         open={open}

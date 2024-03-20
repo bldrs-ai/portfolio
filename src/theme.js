@@ -78,10 +78,18 @@ export const themeComponent = {
     },
     MuiDialogTitle: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
+          color: `${theme.palette.primary.main}`, // Default border color in rest state
           textAlign: 'center',
           paddingTop: '30px',
-        }
+        }),
+      },
+    },
+    MuiDialog: {
+      styleOverrides: {
+        paper: ({ theme }) => ({
+          // backgroundColor: `${theme.palette.background.default}`, // Default border color in rest state
+        }),
       },
     },
     MuiDialogActions: {

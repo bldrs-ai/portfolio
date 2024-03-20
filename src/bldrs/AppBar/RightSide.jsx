@@ -40,7 +40,7 @@ return(
       onClick={()=>setColorTheme(3)}
       sx={{border:'none', backgroundColor:colors[3].primary}}
     />
-    <IconButton
+      <IconButton
       size="large"
       edge="end"
       aria-label="account of current user"
@@ -61,8 +61,9 @@ const RightSide = () => {
     sx={{marginRight:'-15px'}}
     >
       <Stack   direction="row">
-      <DialogStory/>
+
       <DialogFullPage/>
+      <DialogStory/>
       <Dialog
         actionTitle={'OK'}
         icon={<ColorLensOutlinedIcon size='inherit'/>}
@@ -72,7 +73,7 @@ const RightSide = () => {
         tabList={['Recent']}
         dialogTitle={
           <Typography>
-            Theme
+            Choose color theme
           </Typography>
         }
         dialogContent={

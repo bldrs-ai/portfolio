@@ -22,12 +22,7 @@ function Share() {
    const theme = useTheme()
 
   return (
-    <Paper variant="background"
-    sx={{
-      position:'fixed',
-      width:'100%',
-      height:'100%',
-    }}>
+    <>
     <AppBar/>
     <Stack
       direction='row'
@@ -38,6 +33,7 @@ function Share() {
         position:'fixed',
         width:'100%',
         height:'100%',
+        backgroundColor: theme.palette.background.paper,
       }}
     >
       {showBldrs &&
@@ -54,7 +50,7 @@ function Share() {
           color:theme.palette.primary.main
         }}
         >
-          <Stack justifyContent={'center'} alignItems={'center'} spacing={1} sx={{padding:'20px'}}>
+          <Stack justifyContent={'center'} alignItems={'center'} spacing={1} sx={{padding:'10px'}}>
             <Typography sx={{textAlign:'center', padding:'0px 30px'}}>
               Bldrs.ai can be integrated into other websites using an iframe.
             </Typography>
@@ -66,7 +62,7 @@ function Share() {
 
         }
     </Stack>
-    </Paper>
+    </>
   );
 }
 

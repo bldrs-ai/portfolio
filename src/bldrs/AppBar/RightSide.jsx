@@ -61,7 +61,6 @@ const RightSide = () => {
     sx={{marginRight:'-15px'}}
     >
       <Stack   direction="row">
-
       <DialogFullPage/>
       <DialogStory/>
       <Dialog

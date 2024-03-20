@@ -50,7 +50,7 @@ function Share() {
           color:theme.palette.primary.main
         }}
         >
-          <Stack justifyContent={'center'} alignItems={'center'} spacing={1} sx={{padding:'10px'}}>
+          <Stack justifyContent={'center'} alignItems={'center'} spacing={1} sx={{padding:'10px', width:300}}>
             <Typography sx={{textAlign:'center', padding:'0px 30px'}}>
               Bldrs.ai can be integrated into other websites using an iframe.
             </Typography>

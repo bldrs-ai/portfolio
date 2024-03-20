@@ -44,13 +44,13 @@ const DialogMagic = () => {
           direction="column" justifyContent="center" alignItems="center" sx={{ width:'100%', height:'100%'}}
           spacing={4}
           >
-            <Box sx={{width:'400px', height:'400px'}}>
+            <Box sx={{width:'340px', height:'340px'}}>
               {instruction ?
                 <Stack
                 direction="column"
                 alignItems='center'
                 justifyContent='center'
-                sx={{width:'400px', height:'400px', borderRadius:'20px', color:theme.palette.background.default}}
+                sx={{width:'340px', height:'340px', borderRadius:'20px', color:theme.palette.background.default}}
                 >
                   <Typography variant="overline" sx={{ fontWeight:'bold'}}>
                     1.Go to Bldrs.ai
@@ -65,7 +65,7 @@ const DialogMagic = () => {
                     4. Click create
                   </Typography>
               </Stack>:
-              <img src={`${process.env.PUBLIC_URL}/Simpsons.gif`} alt="Example" style={{width:'400px', height:'400px', borderRadius:'20px'}} />
+              <img src={`${process.env.PUBLIC_URL}/Simpsons.gif`} alt="Example" style={{width:'340px', height:'340px', borderRadius:'20px'}} />
 
             }
             </Box>

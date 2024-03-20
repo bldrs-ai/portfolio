@@ -48,9 +48,8 @@ const DialogFullPage = () => {
       description: 'Our goal is to simplify the access to CAD data and project versions, as well as the sharing and searching of relevant BIM data.',
       expandedDescription:
       `Our goal is to transform how teams manage and access CAD data in 3D environments,
-      making project versions more accessible and simplifying the sharing and searching of CAD data.
-      This initiative aims to eliminate common obstacles in team collaboration, ensuring that members can effortlessly find and utilize project data contained in digital twins.
-      By enhancing these processes, we aim to enable a more cohesive and efficient workflows.
+      making project versions more accessible and simplifying the sharing and searching of digital twins.
+      We aim to eliminate common obstacles in team collaboration, ensuring that members can effortlessly find and utilize project data contained in digital twins.
       `
     },
     { title: 'Git enabled Versions',

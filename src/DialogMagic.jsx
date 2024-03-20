@@ -50,7 +50,7 @@ const DialogMagic = () => {
                 direction="column"
                 alignItems='center'
                 justifyContent='center'
-                sx={{width:'400px', height:'400px', borderRadius:'20px'}}
+                sx={{width:'400px', height:'400px', borderRadius:'20px', color:theme.palette.background.default}}
                 >
                   <Typography variant="overline" sx={{ fontWeight:'bold'}}>
                     1.Go to Bldrs.ai

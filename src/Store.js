@@ -16,7 +16,7 @@ const useStore = create((set) => ({
   isNavigationOpen: true,
   isTimelineOpen: true,
   showViewer: false,
-  colorTheme:0,
+  colorTheme:3,
   res:[],
   project:0,
   portfolio: {

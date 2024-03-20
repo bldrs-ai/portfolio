@@ -1,10 +1,7 @@
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import LogoB from '../../Logos/LogoB'
 import Stack from '@mui/material/Stack'
-import Dialog from '../../Dialog'
-import {Projects} from '../Projects'
 import useStore from '../../Store';
 import Button from '@mui/material/Button';
 
@@ -38,22 +35,6 @@ const LeftSide = ({onGoToLocation}) => {
       <Button variant={showBldrs?"contained":'outlined'} size='small' sx={{borderRadius:'30px', fontWeight:'bold'}}  color='primary' onClick={()=>toggleShowBldrs()}>
           bldrs.ai
         </Button>
-      {/* <Dialog
-        actionTitle={'OK'}
-        buttonLabel={'projects'}
-        buttonColor={'primary'}
-        tabs={false}
-        tabList={['Recent']}
-        noTitle={true}
-        dialogTitle={
-          <Typography>
-            Projects
-          </Typography>
-        }
-        dialogContent={
-          <Projects onGoToLocation={onGoToLocation}/>
-        }
-      /> */}
     </Stack>
     )
   }

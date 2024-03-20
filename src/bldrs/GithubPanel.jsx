@@ -4,8 +4,6 @@ import Stack from '@mui/material/Stack'
 
 
 export default function GithubPanel({onClose}){
-
-
 return(
   <Stack
   direction='column'

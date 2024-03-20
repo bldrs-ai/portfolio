@@ -16,7 +16,7 @@ export const themeComponent = {
             boxShadow: theme.shadows[ownerState.elevation],
             padding:'1em',
             overflow:'scroll',
-            backgroundColor:theme.palette.background.default,
+            backgroundColor:theme.palette.background.paper,
           })
         },
       ]
@@ -217,7 +217,21 @@ export const themeComponent = {
         },
       },
     },
-
+    MuiCard: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          backgroundColor: `${theme.palette.background.default}`, // Default border color in rest state
+          color:`${theme.palette.primary.main}`
+        }),
+      },
+    },
+    MuiCardContent: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          color:`${theme.palette.primary.main}` // Sets the text color inside the card content to the primary color
+        }),
+      },
+    },
   },
 }
 

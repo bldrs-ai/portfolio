@@ -16,7 +16,7 @@ const Transition = React.forwardRef((props, ref) => <Slide direction="up" ref={r
 const InfoCard = ({ title, logo: LogoComponent, description, readMoreLink, expandedDescription }) => {
   const [expanded, setExpanded] = React.useState(false);
   return(
-    <Card sx={{ width: 300, height: expanded ? 500: 360, borderRadius: 1, backgroundColor: 'white', display: 'flex', flexDirection: 'column' }}>
+    <Card sx={{ width: 300, height: expanded ? 500: 360, borderRadius: 1, display: 'flex', flexDirection: 'column' }}>
       { !expanded &&
         <CardMedia sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100px', marginTop:4 }}>
         <LogoComponent scale={3.5}/>
@@ -26,7 +26,7 @@ const InfoCard = ({ title, logo: LogoComponent, description, readMoreLink, expan
           <Typography gutterBottom variant="overline" component="div" textAlign="center">
             {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary" textAlign="center">
+          <Typography variant="body2" textAlign="center">
             {expanded? expandedDescription : description}
           </Typography>
         </CardContent>

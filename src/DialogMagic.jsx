@@ -59,7 +59,7 @@ const DialogMagic = () => {
                     2. Click on the magic wand
                   </Typography>
                   <Typography variant="overline" sx={{ fontWeight:'bold'}}>
-                    3. Input the prompt
+                    3. Input the image description
                   </Typography>
                   <Typography variant="overline" sx={{ fontWeight:'bold'}}>
                     4. Click create

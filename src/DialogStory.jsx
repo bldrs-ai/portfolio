@@ -16,7 +16,7 @@ const Transition = React.forwardRef((props, ref) => <Slide direction="up" ref={r
 const InfoCard = ({ title, logo: LogoComponent, description, readMoreLink, expandedDescription }) => {
   const [expanded, setExpanded] = React.useState(false);
   return(
-    <Card sx={{ width: 300, height: expanded ? 500: 360, borderRadius: 1, display: 'flex', flexDirection: 'column' }}>
+    <Card sx={{ width: 300, height: expanded ? 500: 360, borderRadius: 1, display: 'flex', flexDirection: 'column', marginRight:'10px' }}>
       { !expanded &&
         <CardMedia sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100px', marginTop:4 }}>
         <LogoComponent scale={3.5}/>
@@ -48,7 +48,7 @@ const DialogFullPage = () => {
       description: 'Our goal is to simplify the access to CAD data and project versions, as well as the sharing and searching of relevant BIM data.',
       expandedDescription:
       `Our goal is to transform how teams manage and access CAD data in 3D environments,
-      making project versions more accessible and simplifying the sharing and searching of 3D data.
+      making project versions more accessible and simplifying the sharing and searching of CAD data.
       This initiative aims to eliminate common obstacles in team collaboration, ensuring that members can effortlessly find and utilize project data contained in digital twins.
       By enhancing these processes, we aim to enable a more cohesive and efficient workflows.
       `

@@ -50,9 +50,12 @@ function Share() {
           color:theme.palette.primary.main
         }}
         >
-          <Stack justifyContent={'center'} alignItems={'center'} spacing={1} sx={{padding:'10px', width:300}}>
-            <Typography sx={{textAlign:'center', padding:'0px 30px'}}>
-              Bldrs.ai can be integrated into other websites using an iframe.
+          <Stack justifyContent={'center'} alignItems={'center'} spacing={3} sx={{padding:'30px 10px', width:300}}>
+            <Typography sx={{textAlign:'center', padding:'0px 30px', lineHeight:'2em'}} variant='overline'>
+              Our first Product Share is a 3D viewer build on top of custom bldrs engine and Github. It opens IFC and STEP models, and aims to enable effortless sharing of CAD models.
+            </Typography>
+            <Typography sx={{textAlign:'center', padding:'0px 30px',lineHeight:'2em'}} variant='overline'>
+              Share can be integrated into other websites using an iframe.
             </Typography>
             <Typography sx={{fontWeight:'bold'}}>
               {iframeString}

@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   AppBar, Box, Dialog, IconButton, Slide, Stack, Toolbar, Typography,
-  useMediaQuery, useTheme,
+  useMediaQuery, useTheme,Link
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import LogoB_top from './Logos/LogoB';
@@ -50,10 +50,10 @@ const DialogMagic = () => {
                 direction="column"
                 alignItems='center'
                 justifyContent='center'
-                sx={{width:'340px', height:'340px', borderRadius:'20px', color:theme.palette.background.default}}
+                sx={{width:'340px', height:'340px', borderRadius:'20px', color:theme.palette.background.primary}}
                 >
                   <Typography variant="overline" sx={{ fontWeight:'bold'}}>
-                    1.Go to Bldrs.ai
+                    1.Go to <Link href="https://www.bldrs.ai/share/v/gh/Swiss-Property-AG/Schneestock-Public/main/ZGRAGGEN.ifc#c:80.66,11.66,-94.06,6.32,2.93,-8.72">Bldrs.ai</Link>
                   </Typography>
                   <Typography variant="overline" sx={{ fontWeight:'bold'}}>
                     2. Click on the magic wand

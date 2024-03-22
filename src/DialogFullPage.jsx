@@ -107,13 +107,10 @@ export default function DialogFullPage() {
           <iframe width="560" height="315" src="https://www.youtube.com/embed/PICwLymxB0I?si=g_GDvPeD_KLjdy5zcontrols=0 t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </ListItem>
         <ListItem>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/PICwLymxB0I?si=g_GDvPeD_KLjdy5zcontrols=0 t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/PFmVd3Ioakc?si=qqYIjjDJau5zydt6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </ListItem>
         </List>
         <List>
-          <ListItem>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/PFmVd3Ioakc?si=qqYIjjDJau5zydt6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </ListItem>
         <ListItem>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/3-o3I9PU6-E?si=L3SvIkj6z6Ngu-Er" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </ListItem>

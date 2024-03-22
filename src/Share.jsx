@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css';
 import useStore from './Store';
 import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import AppBar from './bldrs/AppBar/AppBar'
 import Paper from '@mui/material/Paper';
@@ -50,9 +51,12 @@ function Share() {
           color:theme.palette.primary.main
         }}
         >
-          <Stack justifyContent={'center'} alignItems={'center'} spacing={3} sx={{padding:'30px 10px', width:300}}>
-            <Typography sx={{textAlign:'center', padding:'0px 30px', lineHeight:'2em'}} variant='overline'>
-              Our first Product Share is a 3D viewer build on top of custom bldrs engine and Github. It opens IFC and STEP models, and aims to enable effortless sharing of CAD models.
+          <Stack justifyContent={'center'} alignItems={'center'} spacing={2} sx={{padding:'30px 10px', width:300}}>
+            <Typography sx={{textAlign:'center', padding:'0px 30px', lineHeight:'2em', fontWeight: 'bold' }} variant='overline'>
+            Our first Product Share is a 3D viewer build on top of custom bldrs engine and Github.
+            </Typography>
+            <Typography sx={{textAlign:'center', padding:'0px 30px', lineHeight:'2em', }} variant='overline'>
+            It opens IFC and STEP models, and aims to enable effortless sharing of CAD models.
             </Typography>
             <Typography sx={{textAlign:'center', padding:'0px 30px',lineHeight:'2em'}} variant='overline'>
               Share can be integrated into other websites using an iframe.

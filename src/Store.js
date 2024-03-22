@@ -5,7 +5,7 @@ const useStore = create((set) => ({
   borderRadius: 16,
   themeScheme: 0,
   showComponents: false,
-  showBldrs:true,
+  showBldrs:false,
   showComments: false,
   circles:[],
   res:[],

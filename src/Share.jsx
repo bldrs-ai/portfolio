@@ -2,7 +2,6 @@ import React from 'react'
 import './App.css';
 import useStore from './Store';
 import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import AppBar from './bldrs/AppBar/AppBar'
 import Paper from '@mui/material/Paper';
